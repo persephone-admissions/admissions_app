@@ -11,10 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216204328) do
+ActiveRecord::Schema.define(version: 20151216213529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.text    "content"
+    t.integer "question_id"
+    t.integer "employee_id"
+    t.integer "application_id"
+  end
+
+  add_index "answers", ["application_id"], name: "index_answers_on_application_id", using: :btree
+  add_index "answers", ["employee_id"], name: "index_answers_on_employee_id", using: :btree
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
+
+  create_table "applications", force: :cascade do |t|
+    t.text     "notes"
+    t.integer  "student_id"
+    t.integer  "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "applications", ["course_id"], name: "index_applications_on_course_id", using: :btree
+  add_index "applications", ["student_id"], name: "index_applications_on_student_id", using: :btree
+
+  create_table "courses", force: :cascade do |t|
+    t.date     "start_on"
+    t.date     "end_on"
+    t.text     "description"
+    t.string   "city"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "employees", force: :cascade do |t|
     t.string   "first_name"
@@ -26,4 +57,43 @@ ActiveRecord::Schema.define(version: 20151216204328) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "questionnaires", force: :cascade do |t|
+    t.string  "type"
+    t.integer "course_id"
+  end
+
+  add_index "questionnaires", ["course_id"], name: "index_questionnaires_on_course_id", using: :btree
+
+  create_table "questions", force: :cascade do |t|
+    t.text    "content"
+    t.integer "questionnaire_id"
+  end
+
+  add_index "questions", ["questionnaire_id"], name: "index_questions_on_questionnaire_id", using: :btree
+
+  create_table "statuses", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_foreign_key "answers", "applications"
+  add_foreign_key "answers", "employees"
+  add_foreign_key "answers", "questions"
+  add_foreign_key "applications", "courses"
+  add_foreign_key "applications", "students"
+  add_foreign_key "questionnaires", "courses"
+  add_foreign_key "questions", "questionnaires"
 end
