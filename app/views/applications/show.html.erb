@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @application.notes %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @application.student %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @application.course %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @application.status %>
+</p>
+
+<%= link_to 'Edit', edit_application_path(@application) %> |
+<%= link_to 'Back', applications_path %>
