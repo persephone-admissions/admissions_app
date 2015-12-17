@@ -1,0 +1,109 @@
+/*Everything I've read online says to put all stylesheets in assets/sytlesheets so running with it.*/
+
+body {
+	margin:0;
+}
+
+.wrapper {
+    display:flex;
+    flex-wrap:wrap;
+/*     justify-content: space-between */
+}
+
+.grid-1-20 {
+    width: 5%;
+}
+
+.grid-2-20 {
+	width: 10%;
+}
+
+.grid-3-20{
+	width: 15%;
+}
+
+.grid-4-20 {
+	width:20%;
+}
+
+.grid-1-5 {
+    width: 20%;
+}
+
+.grid-5-20 {
+	width:25%;
+}
+
+.grid-6-20 {
+	width:30%;
+}
+
+.grid-7-20 {
+	width:35%;
+}
+
+.grid-8-20 {
+	width:40%;
+}
+
+.grid-2-5 {
+	width: 40%;
+}
+
+.grid-9-20 {
+	width:45%;
+}
+
+.grid-10-20 {
+	width:50%;
+}
+
+.grid-11-20 {
+	width:55%;
+}
+
+.grid-12-20 {
+	width:60%;
+}
+
+.grid-3-5{
+	width: 60%;
+}
+
+.grid-13-20 {
+	width:65%;
+}
+
+.grid-14-20 {
+	width:70%;
+}
+
+.grid-15-20 {
+	width:75%;
+}
+
+.grid-16-20 {
+	width:80%;
+}
+
+.grid-4-5 {
+	width:80%;
+}
+
+.grid-17-20 {
+	width:85%;
+}
+
+.grid-18-20 {
+	width:90%;
+}
+
+.grid-19-20 {
+	width:95%;
+}
+
+.grid-full {
+	width: 100%;
+}
+
+
