@@ -5,7 +5,7 @@ class InstructorsController < ApplicationController
   # GET /instructors
   # GET /instructors.json
   def index
-    @instructors = instructor.all
+    @instructors = Instructor.all
   end
 
   # GET /instructors/1
@@ -15,7 +15,7 @@ class InstructorsController < ApplicationController
 
   # GET /instructors/new
   def new
-    @instructor = instructor.new
+    @instructor = Instructor.new
   end
 
   # GET /instructors/1/edit
@@ -25,11 +25,11 @@ class InstructorsController < ApplicationController
   # POST /instructors
   # POST /instructors.json
   def create
-    @instructor = instructor.new(instructor_params)
+    @instructor = Instructor.new(instructor_params)
 
     respond_to do |format|
       if @instructor.save
-        format.html { redirect_to @instructor, notice: 'instructor was successfully created.' }
+        format.html { redirect_to @instructor, notice: 'Instructor was successfully created.' }
         format.json { render :show, status: :created, location: @instructor }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class InstructorsController < ApplicationController
   def update
     respond_to do |format|
       if @instructor.update(instructor_params)
-        format.html { redirect_to @instructor, notice: 'instructor was successfully updated.' }
+        format.html { redirect_to @instructor, notice: 'Instructor was successfully updated.' }
         format.json { render :show, status: :ok, location: @instructor }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class InstructorsController < ApplicationController
   def destroy
     @instructor.destroy
     respond_to do |format|
-      format.html { redirect_to instructors_url, notice: 'instructor was successfully destroyed.' }
+      format.html { redirect_to instructors_url, notice: 'Instructor was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

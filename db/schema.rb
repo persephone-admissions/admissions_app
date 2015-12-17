@@ -49,11 +49,13 @@ ActiveRecord::Schema.define(version: 20151217011953) do
 
   create_table "courses_users", id: false, force: :cascade do |t|
     t.integer "course_id"
-    t.integer "user_id"
+    t.integer "instructor_id"
+    t.integer "officer_id"
   end
 
   add_index "courses_users", ["course_id"], name: "index_courses_users_on_course_id", using: :btree
-  add_index "courses_users", ["user_id"], name: "index_courses_users_on_user_id", using: :btree
+  add_index "courses_users", ["instructor_id"], name: "index_courses_users_on_instructor_id", using: :btree
+  add_index "courses_users", ["officer_id"], name: "index_courses_users_on_officer_id", using: :btree
 
   create_table "questionnaires", force: :cascade do |t|
     t.string  "type"
