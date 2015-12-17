@@ -32,4 +32,9 @@ q1 = Question.create(content: "Tell us about a time you overcame a challenge.", 
 
 an1 = Answer.create(content: "One time...", question: q1, user_id: i1.id, application: a1)
 
+c1.instructors.push(i1)
+c1.officers.push(o1)
+
+
+
 
