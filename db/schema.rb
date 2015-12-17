@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151217011953) do
+ActiveRecord::Schema.define(version: 20151217164902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20151217011953) do
     t.integer  "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "status_id"
   end
 
   add_index "applications", ["course_id"], name: "index_applications_on_course_id", using: :btree
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 20151217011953) do
     t.string   "city"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "name"
   end
 
   create_table "courses_users", id: false, force: :cascade do |t|
@@ -58,7 +60,7 @@ ActiveRecord::Schema.define(version: 20151217011953) do
   add_index "courses_users", ["officer_id"], name: "index_courses_users_on_officer_id", using: :btree
 
   create_table "questionnaires", force: :cascade do |t|
-    t.string  "type"
+    t.string  "questionnaire_type"
     t.integer "course_id"
   end
 
