@@ -25,5 +25,11 @@
   <%= @course.city %>
 </p>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
+<% if @current_user %>
+  <% if @current_user.type == "Instructor" || @current_user.type == "Officer" %>
+    <%= link_to 'Edit', edit_course_path(@course) %> 
+  <% else %>
+    <%= link_to 'Application', new_course_application_path(@course) %>
+  <% end %>
+<% end %>
 <%= link_to 'Back', courses_path %>

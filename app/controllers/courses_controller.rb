@@ -5,12 +5,15 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
-    @user = User.find(session[:user_id])
+    @current_user = User.find(session[:user_id]) if session[:user_id]
+
   end
 
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @course = Course.find(params[:id])
+    @current_user = User.find(session[:user_id]) if session[:user_id]
   end
 
   # GET /courses/new

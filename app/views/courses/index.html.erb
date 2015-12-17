@@ -8,9 +8,12 @@
  <% end %>
 <ul>
 
+<% if @current_user %>
+  <% if @current_user.type == "Instructor" || @current_user.type == "Officer" %>
+    <%= link_to 'New Course', new_course_path %>
+  
 
-<% if @user.type == "Instructor" || @user.type == "Officer" %>
-<%= link_to 'New Course', new_course_path %>
+  <% end %>
 <% end %>
 
 
