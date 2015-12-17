@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   validates :type, presence: true
 
   scope :students, -> { where(type: 'Student') }
+  scope :employees, -> { where(type: 'Employee') }
   scope :officers, -> { where(type: 'Officer') }
   scope :instructors, -> { where(type: 'Instructor') }
 
