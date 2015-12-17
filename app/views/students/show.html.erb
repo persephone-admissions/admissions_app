@@ -1,49 +1,28 @@
 <p id="notice"><%= notice %></p>
+<div class="wrapper">
+  <div>
 
-<p>
-  <strong>First name:</strong>
-  <%= @student.first_name %>
-</p>
+    <h3>
+      <strong>Student Name:</strong>
+      <%= @student.first_name %> <%= @student.last_name %>
+    </h3>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @student.last_name %>
-</p>
+    <h4>
+      <strong>Email:</strong>
+      <%= @student.email %>
+    </h4>
 
-<p>
-  <strong>Email:</strong>
-  <%= @student.email %>
-</p>
+    <h5>
+      <strong>Phone number:</strong>
+      <%= @student.phone_number %>
+    </h5>
+      <p>
+        <strong>Address:</strong>
+        <%= @student.street_address %>
+        <%= @student.city %>, <%= @student.state %> <%= @student.country %>
+      </p>
+  </div>
+</div>
 
-<p>
-  <strong>Phone number:</strong>
-  <%= @student.phone_number %>
-</p>
-
-<p>
-  <strong>Street address:</strong>
-  <%= @student.street_address %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @student.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @student.state %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @student.country %>
-</p>
-
-<p>
-  <strong>Password digest:</strong>
-  <%= @student.password_digest %>
-</p>
-
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+  <%= link_to 'Edit', edit_student_path(@student) %> |
+  <%= link_to 'Back', students_path %>
