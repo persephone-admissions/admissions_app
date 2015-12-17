@@ -6,13 +6,17 @@ $(document).ready(function() {
     console.log(questionnaire_id);
     var url = "questionnaires/" + questionnaire_id +  "/questions"
     console.log(url);
+    var qContent = $('input.new').val();
     jQuery.ajax({
       url: "/questionnaires/" + questionnaire_id +  "/questions",
       method: "POST",
-      data: {content: $('input.new').val()},
+      data: {content: qContent},
       dataType: "json",
       success: function(data){
         if (data.created) {
+          $('input.new').val('');
+          var newDiv = "<div><p>"+ qContent + "</p></div>"
+          $(newDiv).appendTo('.questions');
           console.log("Question successfully added");
         } else {
           console.log("Not added");
@@ -24,3 +28,8 @@ $(document).ready(function() {
     });
   });
 });
+
+var addQuestionToPage = function(qID, qContent) {
+  var $newDiv = $('<div>');
+  $newDiv.content
+};

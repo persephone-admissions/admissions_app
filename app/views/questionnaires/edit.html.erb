@@ -1,10 +1,13 @@
 <h1><%= @questionnaire.questionnaire_type %> Questionnaire for <%= link_to @questionnaire.course.name, @questionnaire.course %></h1>
-
-<% @questionnaire.questions.each do |question| %>
-  <%= content_tag(:div, content_tag(:p, question.content), data: {question_id: question.id}) %>
-  <button class="edit question">Edit Question</button>
-  <button class="delete question">Remove</button>
-<% end %>
+<div class="questions">
+  <% @questionnaire.questions.each do |question| %>
+    <div>
+      <p><%= question.content %></p>
+      <button class="edit question">Edit Question</button>
+      <button class="delete question">Remove</button>
+    </div>
+  <% end %>
+</div>
 
 <input type="text" class="new">
 <button class="new question" data-questionnaireid="<%= @questionnaire.id %>">Add new question</button>
