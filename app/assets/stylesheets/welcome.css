@@ -42,7 +42,7 @@ li {
 
 }
 
-a {
+nav, a {
 	text-decoration: none;
 	font-family: 'Slabo 27px', serif;
 	color: white;
