@@ -1,5 +1,13 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, except: [:create, :new]
+
+  self.inheritance_column = :type
+
+  validates :type, presence: true
+
+  scope :instructors, -> { where(type: 'Instructor') }
+  scope :officers, -> { where(type: 'Officer') }
 
   # GET /employees
   # GET /employees.json
