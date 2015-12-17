@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
   resources :applications
-  resources :courses
+  # We'll want to remove the non-nested :applications resource
+  # eventually but I'm leaving it in for now to prevent the scaffolded 
+  # applications views from getting angry before we're ready to fix them.
   resources :students
   resources :employees
+
+  resources :courses do 
+    resources :applications do 
+      resources :questionnaires, only: [:new, :create, :show]
+    end
+    resources :questionnaires, only: [:edit, :update, :show]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
