@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Status.destroy_all
+Course.destroy_all
 Application.destroy_all
 Questionnaire.destroy_all
 Question.destroy_all
@@ -18,4 +19,10 @@ s3 = User.create(first_name: "Vicky", last_name: "T.", type: "Student", email: "
 
 i1 = User.create(first_name: "Kevin", last_name: "Hensing", type: "Instructor", email: "kevhen@ga.com", password: "shiva", phone_number: "(932)305-6952", street_address: "444 Leonard St, PH", city: "Manhattan", state: "NY", country: "USA")
 o1 = User.create(first_name: "Michelle", last_name: "Spyridou", type: "Officer", email: "m.spyridou@ga.com", password: "drag0nz", phone_number: "449-637-1950", street_address: "1283 2nd Ave, Apt 16", city: "Manhattan", state: "NY", country: "USA")
+
+s1 = Status.create(name: "Awaiting Text File Submission")
+
+c1 = Course.create(start_on: Date.new(09-11-2016), end_on: Date.new(12-18-2016), description: "Web Development Immersive", city: "San Francisco, CA")
+
+
 
