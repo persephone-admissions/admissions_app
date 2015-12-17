@@ -17,8 +17,11 @@
 		    </div>
 		    <ul class="nav-links grid-6-20">
 		        <li><a href="/courses">Courses</a></li>
-
+		        <% if @user %>
+		        <li><a href="/logout">Log Out</a></li>
+		        <% else %>
 		        <li><a href="/login">Login</a></li>
+		        <% end %>
 		        <li><a href="/signup">Sign Up</a></li>
 		     </ul>
 		     
