@@ -2,12 +2,13 @@
 
 body {
 	margin:0;
+	height: 100%;
+    overflow: auto;
 }
 
 .wrapper {
     display:flex;
     flex-wrap:wrap;
-    
 }
 
 
