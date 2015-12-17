@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
   get '/signup' => 'students#new'
-  post '/login' => 'sessions#create'
   post '/signup' => 'students#create'
+  
+  get    '/login' => 'sessions#new'
+  post   '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 
   resources :applications
   # We'll want to remove the non-nested :applications resource
