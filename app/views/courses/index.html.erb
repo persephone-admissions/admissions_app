@@ -4,12 +4,14 @@
 
 <ul>
  <% @courses.each do |course| %>
-  <li><%= link_to '#{course.name}', course_path(course) %></li>
+  <li> <%= link_to course.name, course_path(course) %></li>
  <% end %>
 <ul>
 
-<%= link_to 'New Course', new_course_path %>
 
+<% if @user.type == "Instructor" || @user.type == "Officer" %>
+<%= link_to 'New Course', new_course_path %>
+<% end %>
 
 
 

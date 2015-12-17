@@ -5,6 +5,7 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
+    @user = User.find(session[:user_id])
   end
 
   # GET /courses/1
