@@ -26,6 +26,6 @@ c1 = Course.create(name: "Web Development Immersive", description: "Full-Stack E
 
 s1 = Status.create(name: "Awaiting Text File Upload")
 
-a1 = Application.create(user_id: s1.id, course_id: c1, notes: "Great candidate!")
+a1 = Application.create(student_id: s1.id, course_id: c1, notes: "Great candidate!")
 
 
