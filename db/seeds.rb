@@ -24,8 +24,12 @@ c1 = Course.create(name: "Web Development Immersive", description: "Full-Stack E
 
 s1 = Status.create(name: "Awaiting Text File Upload")
 
-a1 = Application.create(student_id: s1.id, course_id: c1, notes: "Great candidate!")
+a1 = Application.create(student_id: s1.id, course_id: c1.id, notes: "Great candidate!")
 
-q1 = Questionnaire.create(questionnaire_type: "Instructor", course: c1)
+qn1 = Questionnaire.create(questionnaire_type: "Instructor", course: c1)
+
+q1 = Question.create(content: "Tell us about a time you overcame a challenge.", questionnaire_id: qn1.id)
+
+an1 = Answer.create(content: "One time...", question: q1, user_id: i1.id, application: a1)
 
 
