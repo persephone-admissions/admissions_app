@@ -6,10 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.destroy_all
-Course.destroy_all
-Application.destroy_all
 Status.destroy_all
+Course.destroy_all
 Application.destroy_all
 Questionnaire.destroy_all
 Question.destroy_all
@@ -26,6 +24,12 @@ c1 = Course.create(name: "Web Development Immersive", description: "Full-Stack E
 
 s1 = Status.create(name: "Awaiting Text File Upload")
 
-a1 = Application.create(user_id: s1.id, course_id: c1, notes: "Great candidate!")
+a1 = Application.create(student_id: s1.id, course_id: c1.id, notes: "Great candidate!")
+
+qn1 = Questionnaire.create(questionnaire_type: "Instructor", course: c1)
+
+q1 = Question.create(content: "Tell us about a time you overcame a challenge.", questionnaire_id: qn1.id)
+
+an1 = Answer.create(content: "One time...", question: q1, user_id: i1.id, application: a1)
 
 
