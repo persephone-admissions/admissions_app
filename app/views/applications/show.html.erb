@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Notes:</strong>
-  <%= @application.notes %>
-</p>
+<% if current_user.type == "Instructor" || current_user.type == "Officer" %>
+  <p>
+    <strong>Notes:</strong>
+    <%= @application.notes %>
+  </p>
+<% end %>
 
 <p>
   <strong>Student:</strong>

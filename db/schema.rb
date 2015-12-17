@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151217172048) do
+ActiveRecord::Schema.define(version: 20151217202503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,9 +31,13 @@ ActiveRecord::Schema.define(version: 20151217172048) do
     t.text     "notes"
     t.integer  "student_id"
     t.integer  "course_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "status_id"
+    t.string   "text_file_file_name"
+    t.string   "text_file_content_type"
+    t.integer  "text_file_file_size"
+    t.datetime "text_file_updated_at"
   end
 
   add_index "applications", ["course_id"], name: "index_applications_on_course_id", using: :btree
