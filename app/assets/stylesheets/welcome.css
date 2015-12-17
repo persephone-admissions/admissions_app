@@ -1,0 +1,50 @@
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
+
+
+nav {
+	display: flex;
+    background-color: black;
+	height: 5em;
+}
+
+.welcome {
+	text-align: center;
+	width: 50%;
+	margin: 8em auto;
+	font-family: 'Oswald', sans-serif;
+	font-size: 25px;
+	
+}
+
+/*.background{
+	background: url(https://nyoobserver.files.wordpress.com/2014/09/screen-shot-2014-09-24-at-6-13-10-pm.png);*/
+}
+.logo {
+	margin-top: 10em;
+}
+
+ul.nav-links {
+  display: flex;
+  justify-content: space-between; 
+  margin-left: 35em;
+  margin-right: 3em;
+  margin-top: 2em; 
+
+ }
+
+li {
+ 
+	padding-left: 3em;
+
+	list-style-type: none;
+
+}
+
+a {
+	text-decoration: none;
+	font-family: 'Slabo 27px', serif;
+	color: white;
+	font-size: 22px;
+}

@@ -3,22 +3,24 @@
 <head>
   <title>AdmissionsApp</title>
   <%= stylesheet_link_tag "grids.css" %>
+  <%= stylesheet_link_tag "welcome.css" %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
  <div class="wrapper">
-    <nav class="grid-full">
-    <div class="logo">
-        <img src="https://pbs.twimg.com/profile_images/616323696601468930/SkNd2ppU.png" alt="">
-    </div>
-    <ul class="nav-links">
-        <li><a href="./index.html">Courses</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/signup">Sign Up</a></li>
-      </ul>
-    </nav>
+	    <nav class="grid-full">
+		    <div class="logo grid-6-20">
+		        <img src="nav_logo.png" alt="">
+		    </div>
+		    <ul class="nav-links grid-6-20">
+		        <li><a href="./index.html">Courses</a></li>
+		        <li><a href="/login">Login</a></li>
+		        <li><a href="/signup">Sign Up</a></li>
+		     </ul>
+		     
+	    </nav>
 <%= yield %>
 
  </div>
