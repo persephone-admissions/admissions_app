@@ -1,20 +1,22 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, except: [:create, :new]
 
   # GET /employees
   # GET /employees.json
   def index
-    @employees = Employee.all
+    # @employees = User.where(type: "Instructor" || type: "Officer")
   end
 
   # GET /employees/1
   # GET /employees/1.json
   def show
+    @employee = User.find(params[:id])
   end
 
   # GET /employees/new
   def new
-    @employee = Employee.new
+    @employee = User.new
   end
 
   # GET /employees/1/edit
@@ -24,7 +26,7 @@ class EmployeesController < ApplicationController
   # POST /employees
   # POST /employees.json
   def create
-    @employee = Employee.new(employee_params)
+    @employee = User.new(employee_params)
 
     respond_to do |format|
       if @employee.save
@@ -56,7 +58,7 @@ class EmployeesController < ApplicationController
   def destroy
     @employee.destroy
     respond_to do |format|
-      format.html { redirect_to employees_url, notice: 'Employee was successfully destroyed.' }
+      format.html { redirect_to employees_url, notice: 'employee was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,7 +66,7 @@ class EmployeesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_employee
-      @employee = Employee.find(params[:id])
+      @employee = User.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

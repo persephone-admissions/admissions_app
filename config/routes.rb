@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+
   get '/signup' => 'students#new'
   post '/signup' => 'students#create'
+  
+  get    '/login' => 'sessions#new'
+  post   '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
+
   resources :applications
   # We'll want to remove the non-nested :applications resource
   # eventually but I'm leaving it in for now to prevent the scaffolded 
