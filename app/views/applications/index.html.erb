@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Notes</th>
       <th>Student</th>
       <th>Course</th>
       <th>Status</th>
+      <th>Notes</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +16,10 @@
   <tbody>
     <% @applications.each do |application| %>
       <tr>
-        <td><%= application.notes %></td>
-        <td><%= application.student %></td>
-        <td><%= application.course %></td>
+        <td><%= application.student.first_name %> <%= application.student.last_name %></td>
+        <td><%= application.course.name %></td>
         <td><%= application.status %></td>
+        <td><%= application.notes %></td>
         <td><%= link_to 'Show', application %></td>
         <td><%= link_to 'Edit', edit_application_path(application) %></td>
         <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,5 +1,6 @@
 class ApplicationsController < ApplicationController
   before_action :set_application, only: [:show, :edit, :update, :destroy]
+  before_action :authorize
 
   # GET /applications
   # GET /applications.json
@@ -25,6 +26,8 @@ class ApplicationsController < ApplicationController
   # POST /applications.json
   def create
     @application = Application.new(application_params)
+    @student_id = session[:user_id]
+    @course_id = params[:id]
 
     respond_to do |format|
       if @application.save

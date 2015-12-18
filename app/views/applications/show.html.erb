@@ -3,18 +3,18 @@
 <% if current_user.type == "Instructor" || current_user.type == "Officer" %>
   <p>
     <strong>Notes:</strong>
-    <%= @application.notes %>
+    <%= markdown(@application.notes) %>
   </p>
 <% end %>
 
 <p>
   <strong>Student:</strong>
-  <%= @application.student %>
+  <a href="/students/<%= @application.student.id %>"> <%= @application.student.first_name %> <%= @application.student.last_name %></a>
 </p>
 
 <p>
   <strong>Course:</strong>
-  <%= @application.course %>
+  <a href="/courses/<%= @application.course.id %>"> <%= @application.course.name %> </a>
 </p>
 
 <p>

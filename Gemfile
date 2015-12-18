@@ -25,7 +25,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 # Use Paperclip to upload text files
-gem "paperclip", "~> 4.3"
+gem 'paperclip', "~> 4.3"
+
+# Use RedCarpet to enable markdown
+gem 'redcarpet'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -36,6 +39,7 @@ gem "paperclip", "~> 4.3"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry'
 end
 
 group :development do
