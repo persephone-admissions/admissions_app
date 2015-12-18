@@ -15,6 +15,7 @@ class QuestionnairesController < ApplicationController
   # GET /courses/1/questionnaires ? MAYBE
   # GET /courses/1/applications/1/questionnaires/1
   def show
+    @application = Application.find(params[:application_id])
 
   end
 

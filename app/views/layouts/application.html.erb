@@ -14,7 +14,7 @@
 		    </div>
 		    <ul class="nav-links grid-6-20">
 		        <li><a href="/courses">Courses</a></li>
-		        <% if @current_user %>
+		        <% if current_user %>
 		        <li><%= link_to "Log Out", logout_url, method: :delete %></li>
 		        <% else %> 
 		        <li><a href="/login">Login</a></li>

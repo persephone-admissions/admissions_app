@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   post 'questionnaires/:questionnaire_id/questions' => 'questions#create'
   delete 'questionnaires/:questionnaire_id/questions/:id' => 'questions#destroy'
 
+  post 'applications/:application_id/answers' => 'answers#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
