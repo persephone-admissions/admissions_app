@@ -1,28 +1,28 @@
 <p id="notice"><%= notice %></p>
-<div class="wrapper">
-  <div>
+
+  <div class="student-container2">
 
     <h3>
-      <strong>Student Name:</strong>
+      <!-- <strong>Student Name:</strong> -->
       <%= @student.first_name %> <%= @student.last_name %>
     </h3>
 
     <h4>
-      <strong>Email:</strong>
+      <!-- <strong>Email:</strong> -->
       <%= @student.email %>
     </h4>
 
     <h5>
-      <strong>Phone number:</strong>
+      <!-- <strong>Phone number:</strong> -->
       <%= @student.phone_number %>
     </h5>
       <p>
-        <strong>Address:</strong>
+       <!--  <strong>Address:</strong> -->
         <%= @student.street_address %>
         <%= @student.city %>, <%= @student.state %> <%= @student.country %>
       </p>
+      <%= link_to 'Edit', edit_student_path(@student),:class => "New-Student-Button" %>
+      <%= link_to 'Back', students_path, :class => "New-Student-Button" %>
   </div>
-</div>
 
-  <%= link_to 'Edit', edit_student_path(@student) %> |
-  <%= link_to 'Back', students_path %>
+
