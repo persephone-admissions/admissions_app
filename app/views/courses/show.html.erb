@@ -3,11 +3,14 @@
   <div class="course-container">
     <h1><%= @course.name %></h1>
     <ul>  
-      <li>Starts:
-        <%= @course.start_on %> Ends: <%= @course.end_on %>
+      <li>Starts: 
+        <%= @course.start_on %>
       </li>
-      <li>Description
-        <%= @course.description %>
+      <li>Ends:
+        <%= @course.end_on %>
+      </li>
+      <li>Description: 
+        <p> <%= @course.description %> </p>
       </li>
       <li>City:
         <%= @course.city %>
@@ -26,10 +29,9 @@
 
       <% else %>
         
-        <li><%= link_to 'Application', new_course_application_path(@course) %></li>
+        <div class="new-course-link app"> <%= link_to 'Apply Now', new_course_application_path(@course) %></div>
       <% end %>
     <% end %>
-    <div class="new-course-link back" ><%= link_to 'Back', courses_path %></div>
   </div>
 </div>  
 

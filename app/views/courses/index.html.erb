@@ -3,11 +3,18 @@
 <div class="course-wrapper"> 
   <div class="course-container">
     <h1>Courses</h1>
-    <ul>
-     <% @courses.each do |course| %>
-      <li> <%= link_to course.name, course_path(course) %> Starts: <%= course.start_on %> Ends: <%= course.end_on %></li>
-     <% end %>
-    </ul>
+    <!-- <ul> -->
+    <div class="courses-list">
+      <ul>
+       <% @courses.each do |course| %>
+          
+            <li> <%= link_to course.name, course_path(course) %> Starts: 10/25 <%= course.start_on %> Ends: 12/31 <%= course.end_on %></li>
+            <li> Hello </li>
+        
+       <% end %>
+      </ul>
+    </div>
+  <!--   </ul> -->
     <% if @current_user %>
       <% if @current_user.type == "Instructor" || @current_user.type == "Officer" %>
         <div class="new-course-link">

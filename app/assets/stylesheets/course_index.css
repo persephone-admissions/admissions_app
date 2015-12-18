@@ -5,7 +5,7 @@
 .course-wrapper {
 	background-color:#C2C2C2;
 	width: 100%;
-	height:87.5vh;
+	height:100%;
 }
 
 .course-container {
@@ -74,9 +74,39 @@
 
 .new-course-link.edit{
 	width: 80px;
-	margin-right: 50px;
+	margin-bottom: 10px;
 
 }
 
+.new-course-link.app {
+	width:120px;
+	margin-bottom: 10px;
+
+}
+
+.courses-list {
+	font-size: 22px;
+	width:90%;
+	height:100%;
+	margin: 0 auto;
+	
+}
+
+.courses-list li {
+	padding: 10px;
+}
+
+.courses-list a{
+	text-decoration: none;
+	color: black;
+}
+
+.courses-list a:hover {
+	color: red;
+}
 
 
+.course-container li {
+	font-size: 20px;
+	padding: 15px;
+}
