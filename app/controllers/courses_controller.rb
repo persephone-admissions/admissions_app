@@ -14,7 +14,7 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
     @current_user = User.find(session[:user_id]) if session[:user_id]
-    @application = Application.find(params[:id])  
+    # @application = Application.find(params[:id])  
   end
 
   # GET /courses/new
@@ -74,6 +74,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:start_on, :end_on, :description, :city)
+      params.require(:course).permit(:name, :start_on, :end_on, :description, :city)
     end
 end

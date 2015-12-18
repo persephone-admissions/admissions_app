@@ -7,10 +7,7 @@
     <div class="courses-list">
       <ul>
        <% @courses.each do |course| %>
-          
             <li> <%= link_to course.name, course_path(course) %> Starts: 10/25 <%= course.start_on %> Ends: 12/31 <%= course.end_on %></li>
-            <li> Hello </li>
-        
        <% end %>
       </ul>
     </div>
