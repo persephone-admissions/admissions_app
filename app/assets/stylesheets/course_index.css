@@ -26,6 +26,7 @@
 	padding-top: 15px;
 	font-family: 'Oswald', sans-serif;
 	font-size: 40px;
+	
 }
 
 .new-course-link {
@@ -41,7 +42,6 @@
 	bottom:15px;
 	border-radius: 3px;
 }
-
 .new-course-link a{
 	position:relative;
 	display: block;
@@ -49,8 +49,6 @@
 	top: 50%;
 	transform: translateY(-50%);
 	font-family: 'Oswald', sans-serif;
-	
-
 }
 
 .new-course-link:hover {
@@ -68,3 +66,17 @@
 	text-decoration: none;
 
 }
+
+.new-course-link.back {
+	width: 80px;
+	left: 0;
+}
+
+.new-course-link.edit{
+	width: 80px;
+	margin-right: 50px;
+
+}
+
+
+
