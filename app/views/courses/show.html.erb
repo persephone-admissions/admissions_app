@@ -26,9 +26,7 @@
         <% end %>
         </ul>
         <div class="new-course-link edit"><%= link_to 'Edit', edit_course_path(@course) %></div>
-
       <% else %>
-        
         <div class="new-course-link app"> <%= link_to 'Apply Now', new_course_application_path(@course) %></div>
       <% end %>
     <% end %>
