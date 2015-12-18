@@ -5,7 +5,7 @@ class EmployeesController < ApplicationController
   # GET /employees
   # GET /employees.json
   def index
-    # @employees = User.where(type: "Instructor" || type: "Officer")
+    @employees = User.where("type= 'Instructor'" || "type= 'Officer'")
   end
 
   # GET /employees/1
