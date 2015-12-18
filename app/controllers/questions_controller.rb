@@ -19,6 +19,11 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-
+    question = Question.find(params[:id])
+    if question.destroy
+      render json: {deleted: true}
+    else
+      render json: {deleted: false}
+    end
   end
 end
