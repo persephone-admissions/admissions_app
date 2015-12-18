@@ -4,15 +4,19 @@
   <title>AdmissionsApp</title>
   <%= stylesheet_link_tag "grids.css" %>
   <%= stylesheet_link_tag "welcome.css" %>
+  <%= stylesheet_link_tag "log_in_form_page.css" %>
+  <%= stylesheet_link_tag "course_index.css" %>
+  <%= stylesheet_link_tag "sign_up_form_page.css" %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  <script type="text/javascript" src="/questionnaire.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
  <div class="wrapper">
 	    <nav class="grid-full">
 		    <div class="logo grid-6-20">
-		        <img src="nav_logo.png" alt="">
+		        <img src="/nav_logo.png" alt="">
 		    </div>
 		    <ul class="nav-links grid-6-20">
 		        <li><a href="/courses">Courses</a></li>

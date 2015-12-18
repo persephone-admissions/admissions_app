@@ -7,6 +7,7 @@ nav {
 	display: flex;
     background-color: black;
 	height: 5em;
+	overflow: scroll;
 
 }
 
@@ -15,7 +16,8 @@ nav {
 	width: 50%;
 	margin: 8em auto;
 	font-family: 'Oswald', sans-serif;
-	font-size: 25px;
+	font-size: 28px;
+	white-space: nowrap;
 	
 }
 
@@ -25,9 +27,12 @@ nav {
 	height:87.5vh;
 	background-attachment: absolute;
 }
-.logo {
 
-	margin-top: 10px;
+.logo img {
+	display: inline-block;
+	position: relative;
+	top: 40px;
+	transform: translateY(-50%);
 }
 
 ul.nav-links {
@@ -50,8 +55,4 @@ li {
 	font-family: 'Slabo 27px', serif;
 	color: white;
 	font-size: 22px;
-}
-
-.nav-links a:hover {
-	color:#C4C4C4
 }

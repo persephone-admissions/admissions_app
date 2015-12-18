@@ -11,3 +11,6 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
   Rails.application.config.assets.precompile += %w( grids.css )
   Rails.application.config.assets.precompile += %w( welcome.css )
+  Rails.application.config.assets.precompile += %w( log_in_form_page.css )
+  Rails.application.config.assets.precompile += %w( sign_up_form_page.css )
+    Rails.application.config.assets.precompile += %w( course_index.css )
