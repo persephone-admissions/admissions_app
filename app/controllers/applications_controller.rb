@@ -1,5 +1,6 @@
 class ApplicationsController < ApplicationController
   before_action :set_application, only: [:show, :edit, :update, :destroy]
+  before_action :authorize
 
   # GET /applications
   # GET /applications.json
@@ -25,6 +26,8 @@ class ApplicationsController < ApplicationController
   # POST /applications.json
   def create
     @application = Application.new(application_params)
+    @student_id = session[:user_id]
+    @course_id = params[:id]
 
     respond_to do |format|
       if @application.save
@@ -69,6 +72,6 @@ class ApplicationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def application_params
-      params.require(:application).permit(:notes, :student_id, :course_id, :status_id)
+      params.require(:application).permit(:notes, :student_id, :course_id, :status_id, :text_file)
     end
 end

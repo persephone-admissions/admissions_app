@@ -4,6 +4,26 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   # We can call these methods from other controllers
+  def markdown(text)
+    options = {
+      filter_html:     true,
+      hard_wrap:       true, 
+      link_attributes: { rel: 'nofollow', target: "_blank" },
+      space_after_headers: true, 
+      fenced_code_blocks: true
+    }
+
+    extensions = {
+      autolink:           true,
+      superscript:        true,
+      disable_indented_code_blocks: true
+    }
+
+    renderer = Redcarpet::Render::HTML.new(options)
+    markdown = Redcarpet::Markdown.new(renderer, extensions)
+
+    markdown.render(text).html_safe
+  end
 
   # set the current_user instance variable if we have a session
   def current_user
