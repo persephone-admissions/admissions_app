@@ -1,0 +1,66 @@
+
+
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
+.student-container h1{
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
+}
+
+.student-container {
+	background-color: rgba(10,10,10,.2);
+	width: 90%;
+	margin: 6em auto;
+	border-radius: 2px;
+	font-family: 'Slabo 27px', serif;
+}
+
+.student-container2 {
+	padding: 10px;
+	background-color: rgba(10,10,10,.2);
+	width: 40%;
+	text-align: center;
+	margin: 6em auto;
+	border-radius: 2px;
+	font-family: 'Slabo 27px', serif;
+}
+
+.student-container2 h1 {
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
+}
+
+
+.student-table {
+	width: 70%;
+	text-align: center;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.New-Student-Button {
+	text-align: center;
+	font-size: 15px;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	height:100px;
+	width:150px;
+	background-color: #F5483D;
+	margin: 0 auto;
+	position: relative;
+	border: none;
+	border-radius: 3px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	text-decoration: none;
+}
+
+.New-Student-Button a {
+	text-decoration: none;
+}
+
+.New-Student-Button:hover {
+	background-color: #F1250C;
+}
+
