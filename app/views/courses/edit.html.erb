@@ -1,6 +1,11 @@
-<h1>Editing Course</h1>
 
-<%= render 'form' %>
+<div class="course-container">
 
-<%= link_to 'Show', @course %> |
-<%= link_to 'Back', courses_path %>
+	<h1>Course Edit</h1>
+
+	<%= render 'form' %>
+	<div class="edit-course-links">
+		<%= link_to 'Show', @course %> |
+		<%= link_to 'Back', courses_path %>
+	</div>
+</div>
