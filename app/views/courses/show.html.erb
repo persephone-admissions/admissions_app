@@ -1,33 +1,35 @@
 <p id="notice"><%= notice %></p>
-<ul>
-  <li>Name:
-    <%= @course.name %>
-  </li>
-  <li>Starts:
-    <%= @course.start_on %> Ends: <%= @course.end_on %>
-  </li>
-  <li>Description
-    <%= @course.description %>
-  </li>
-  <li>City:
-    <%= @course.city %>
-  </li>
-</ul>
+<div class="course-wrapper"> 
+  <div class="course-container">
+    <h1><%= @course.name %></h1>
+    <ul>  
+      <li>Starts:
+        <%= @course.start_on %> Ends: <%= @course.end_on %>
+      </li>
+      <li>Description
+        <%= @course.description %>
+      </li>
+      <li>City:
+        <%= @course.city %>
+      </li>
+    </ul>
 
-  <% if @current_user %>
-    <% if @current_user.type == "Instructor" || @current_user.type == "Officer" %>
-      <ul>
-      <h3>Students:</h3>
-      <% @course.applications.each do |app| %>
-        <li><%= link_to app.student.first_name, app %></li> 
+    <% if @current_user %>
+      <% if @current_user.type == "Instructor" || @current_user.type == "Officer" %>
+        <ul>
+        <h3>Students:</h3>
+        <% @course.applications.each do |app| %>
+          <li><%= link_to app.student.first_name, app %></li> 
+        <% end %>
+        </ul>
+        <div class="new-course-link edit"><%= link_to 'Edit', edit_course_path(@course) %></div>
+
+      <% else %>
+        
+        <li><%= link_to 'Application', new_course_application_path(@course) %></li>
       <% end %>
-      </ul>
-      <li><%= link_to 'Edit', edit_course_path(@course) %></li>
-     
-    <% else %>
-      
-      <li><%= link_to 'Application', new_course_application_path(@course) %></li>
     <% end %>
-  <% end %>
-  <li><%= link_to 'Back', courses_path %></li>
+    <div class="new-course-link back" ><%= link_to 'Back', courses_path %></div>
+  </div>
+</div>  
 
