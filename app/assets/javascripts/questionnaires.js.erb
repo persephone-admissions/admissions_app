@@ -1,0 +1,120 @@
+$(document).ready(function() {
+  $('button.new.question').click(function(event) {
+    var questionnaire_id = $(event.target).data("questionnaire-id");
+    var url = "questionnaires/" + questionnaire_id +  "/questions"
+    var qContent = $('textarea.new').val();
+    jQuery.ajax({
+      url: "/questionnaires/" + questionnaire_id +  "/questions",
+      method: "POST",
+      data: {content: qContent},
+      dataType: "json",
+      success: function(data){
+        if (data.created) {
+          $('textarea.new').val('');
+          var $newDiv = $("<div data-question-id=" + data.questionId + "></div>");
+          var $newP = $('<p>');
+          $newP.text(qContent);
+          $newP.appendTo($newDiv);
+          var $newTextArea = $('<textarea hidden></textarea');
+          $newTextArea.val(qContent);
+          $newTextArea.appendTo($newDiv);
+          var $editButton = $("<button class='edit question'>Edit Question</button>");
+          $editButton.appendTo($newDiv);
+          $editButton.click(function(event) {
+            editQuestion(event);
+          });
+          var $updateButton = $("<button class='update question' hidden>Update Question</button>");
+          $updateButton.appendTo($newDiv);
+          $updateButton.click(function(event) {
+            submitUpdate(event);
+          });
+          var $deleteButton = $("<button class='delete question'>Remove</button>");
+          $deleteButton.appendTo($newDiv);
+          $deleteButton.click(function(event) {
+            deleteQuestion(event);
+          });
+          $newDiv.appendTo('.questions');
+
+          console.log("Question successfully added");
+        } else {
+          console.log("Not added");
+        }
+      }, 
+      error: function(error) {
+        console.log(error);
+      }
+    });
+  });
+
+  $('button.edit.question').click(function(event) {
+    editQuestion(event);
+  });
+
+  var editQuestion = function (event) {
+    var questionID = $(event.target).parent().data("question-id");
+    var $questionP = $('div[data-question-id=' + questionID + '] p');
+    $('div[data-question-id=' + questionID + '] textarea').show();
+    $questionP.hide();
+    $('div[data-question-id=' + questionID + '] button.update.question').show();
+    $(event.target).hide();
+  };
+
+  $('button.update.question').click(function(event) {
+    submitUpdate(event);
+  });
+
+  var submitUpdate = function(event) {
+    var questionID = $(event.target).parent().data("question-id");
+    var questionnaireID = $(event.target).parent().parent().data("questionaire-id");
+    var $questionInput = $('div[data-question-id=' + questionID + '] textarea');
+    var questionContent = $questionInput.val();
+    jQuery.ajax({
+      url: "/questionnaires/" + questionnaireID +  "/questions/" + questionID,
+      method: "PATCH",
+      data: {content: questionContent},
+      dataType: "json",
+      success: function(data){
+        if (data.updated) {
+          var $questionP = $('div[data-question-id=' + questionID + '] p');
+          $questionP.text(questionContent);
+          $questionP.show();
+          $questionInput.hide();
+          $(event.target).hide();
+          $('div[data-question-id=' + questionID + '] button.edit.question').show();
+          console.log("Question successfully updated");
+        } else {
+          console.log("Not updated");
+        }
+      }, 
+      error: function(error) {
+        console.log(error);
+      }
+    });
+  };
+
+  var deleteQuestion = function(event) {
+    var $parentDiv = $(event.target).parent();
+    var questionID = $parentDiv.data("question-id");
+    var questionnaireID = $parentDiv.parent().data("questionaire-id");
+    jQuery.ajax({
+      url: "/questionnaires/" + questionnaireID +  "/questions/" + questionID,
+      method: "DELETE",
+      dataType: "json",
+      success: function(data){
+        if (data.deleted) {
+          $parentDiv.remove();
+          console.log("Question successfully deleted");
+        } else {
+          console.log("Not deleted");
+        }
+      }, 
+      error: function(error) {
+        console.log(error);
+      }
+    });    
+  };
+
+  $('button.delete.question').click(function(event) {
+    deleteQuestion(event);
+  });
+});
