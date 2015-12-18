@@ -1,14 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
 
 .log-in-image {
 	background: url('<%= asset_path "GA-LogIn.png" %>');
 	background-size: cover;
 	background-repeat: no-repeat;
 	width:100%;
-	height:87.5vh;
+	height:100%;
 	background-attachment: absolute;
 }
-
-
+.content h1 {
+	text-align: center;
+}
 .content {
 	background-color: rgba(200,200,200,.6);
 	width: 50%;
@@ -18,22 +20,38 @@
 	font-family: 'Oswald', sans-serif;
 	font-size: 25px;
 	color: black;
+
 }
 
 .form-wrapper2 {
-	margin: auto;
-	width: 80%;	
+	width: 100%;
+	margin: 0 auto;	
 }
 
-.form1 {
-	border-radius: 8px;
-	display:inline-block;
-	width: 100px;
+
+
+.log-in-button {
 	text-align: center;
+	font-size: 20px;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	height:40px;
+	width:150px;
+	background-color: #F5483D;
+	margin: 0 auto;
+	position: relative;
+	border: none;
+	border-radius: 3px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 300px;
 }
 
-.form1 input:focus {
-	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+.log-in-button:hover {
+	background-color: #F1250C;
 }
 
-
+.log-in-button-container {
+	width:78%;
+	margin: 0 auto;
+}

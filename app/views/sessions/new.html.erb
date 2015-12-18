@@ -4,12 +4,14 @@
 
 		<div class="form-wrapper2">
 			<div class="form1">
-			  <%= form_tag '/login' do %>
-			    <%= label_tag(:email, "Email:") %>
+			  <%= form_tag '/login', :class => 'field form1' do %>
+			    <%= label_tag(:email,"Email:") %>
 			    <%= text_field_tag :email %>
 			    <%= label_tag(:password, "Password:") %>
 			    <%= password_field_tag :password %>
-			    <%= submit_tag("Log In") %>
+			    <div class="log-in-button-container">
+			    	<%= submit_tag("Log In", class: "log-in-button" ) %>
+			    </div>
 			  <% end %>
 			</div>
 		</div>
