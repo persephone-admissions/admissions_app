@@ -1,25 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @employee.first_name %>
-</p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @employee.last_name %>
-</p>
+<div class="student-container2">
+	<h2>
+	  <%= @employee.first_name %> <%= @employee.last_name %>
+	</h2>
+	<h4>
+	  <a href="mailto:<%= @employee.email %>?Subject=Hello%20From%20GA" target="_top"><%= @employee.email %></a>
+	</h4>
+	<h4>
+	  <%= @employee.type %>
+	</h4>
 
-<p>
-  <strong>Type:</strong>
-  <%= @employee.type %>
-</p>
+	
 
-<p>
-  <strong>Email:</strong>
-  <%= @employee.email %>
-</p>
-
-
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+	<%= link_to 'Edit', edit_employee_path(@employee) %> |
+	<%= link_to 'Back', employees_path %>
+</div>

@@ -22,8 +22,8 @@
         <%= @student.street_address %>
         <%= @student.city %>, <%= @student.state %> <%= @student.country %>
       </p>
-      <%= link_to 'Edit', edit_student_path(@student),:class => "New-Student-Button" %>
-      <%= link_to 'Back', students_path, :class => "New-Student-Button" %>
+      <%= link_to 'Edit', edit_student_path(@student) %>  |
+      <%= link_to 'Back', students_path %>
   </div>
 
 
