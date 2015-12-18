@@ -1,6 +1,12 @@
 class QuestionsController < ApplicationController
   def update
-
+    question = Question.find(params[:id])
+    question.content = params[:content]
+    if question.save
+      render json: {updated: true, questionId: question.id}
+    else
+      render json: {updated: false}
+    end
   end
 
   def create
