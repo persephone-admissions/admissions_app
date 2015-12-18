@@ -9,7 +9,8 @@
 
     <h4>
       <!-- <strong>Email:</strong> -->
-      <%= @student.email %>
+      <a href="mailto:<%= @student.email %>?Subject=Hello%20From%20GA" target="_top"><%= @student.email %></a>
+  
     </h4>
 
     <h5>

@@ -8,6 +8,23 @@
 	text-align: center;
 }
 
+.student-container a {
+	text-decoration: none;
+}
+
+.student-container a:hover{
+	color:black;
+}
+
+.student-container2 a {
+	text-decoration: none;
+}
+
+.student-container2 a:hover{
+	color:black;
+}
+
+
 .student-container {
 	background-color: rgba(10,10,10,.2);
 	width: 90%;

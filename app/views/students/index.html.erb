@@ -22,7 +22,7 @@
           <tr>
             <td><%= student.first_name %></td>
             <td><%= student.last_name %></td>
-            <td><%= student.email %></td>
+            <td><a href="mailto:<%= student.email %>?Subject=Hello%20From%20GA" target="_top"><%= student.email %></a></td>
             <td><%= student.phone_number %></td>
             <td><%= student.street_address %></td>
             <td><%= student.city %></td>
