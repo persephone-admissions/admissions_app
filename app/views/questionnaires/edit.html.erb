@@ -1,0 +1,13 @@
+<h1><%= @questionnaire.questionnaire_type %> Questionnaire for <%= link_to @questionnaire.course.name, @questionnaire.course %></h1>
+<div class="questions grid-full" data-questionnaire-id=<%= @questionnaire.id %>>
+  <% @questionnaire.questions.each do |question| %>
+    <div data-question-id=<%= question.id %>>
+      <p data-question-id=<%= question.id %>><%= question.content %></p>
+      <button class="edit question" data-question-id=<%= question.id %>>Edit Question</button>
+      <button class="delete question">Remove</button>
+    </div>
+  <% end %>
+</div>
+
+<input type="text" class="new">
+<button class="new question" data-questionnaireid="<%= @questionnaire.id %>">Add new question</button>

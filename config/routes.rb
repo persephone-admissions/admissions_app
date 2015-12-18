@@ -21,6 +21,10 @@ Rails.application.routes.draw do
     resources :questionnaires, only: [:edit, :update, :show]
   end
 
+  patch 'questionnaires/:questionnaire_id/questions/:id' => 'questions#update'
+  post 'questionnaires/:questionnaire_id/questions' => 'questions#create'
+  delete 'questionnaires/:questionnaire_id/questions/:id' => 'questions#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

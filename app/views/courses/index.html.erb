@@ -1,20 +1,23 @@
+<p id="notice"><%= notice %></p>
 
+<div class="course-wrapper"> 
+  <div class="course-container">
+    <h1>Courses</h1>
+    <ul>
+     <% @courses.each do |course| %>
+      <li> <%= link_to course.name, course_path(course) %> Starts: <%= course.start_on %> Ends: <%= course.end_on %></li>
+     <% end %>
+    </ul>
 
-<h1>Listing Courses</h1>
-
-<ul>
- <% @courses.each do |course| %>
-  <li> <%= link_to course.name, course_path(course) %></li>
- <% end %>
-<ul>
-
-<% if @current_user %>
-  <% if @current_user.type == "Instructor" || @current_user.type == "Officer" %>
-    <%= link_to 'New Course', new_course_path %>
-  
-
-  <% end %>
-<% end %>
+    <% if @current_user %>
+      <% if @current_user.type == "Instructor" || @current_user.type == "Officer" %>
+        <div class="new-course-link">
+          <%= link_to 'New Course', new_course_path %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
 
 
