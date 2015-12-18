@@ -14,6 +14,7 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
     @current_user = User.find(session[:user_id]) if session[:user_id]
+    @application = Application.find(params[:id])  
   end
 
   # GET /courses/new
