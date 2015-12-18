@@ -99,6 +99,7 @@
 .courses-list a{
 	text-decoration: none;
 	color: black;
+	font-weight: 600;
 }
 
 .courses-list a:hover {
