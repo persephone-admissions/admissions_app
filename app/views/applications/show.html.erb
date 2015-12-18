@@ -3,7 +3,7 @@
 <% if current_user.type == "Instructor" || current_user.type == "Officer" %>
   <p>
     <strong>Notes:</strong>
-    <%= markdown(@application.notes) %>
+    <%= @application.notes %>
   </p>
 <% end %>
 
@@ -20,6 +20,11 @@
 <p>
   <strong>Status:</strong>
   <%= @application.status %>
+</p>
+
+<p>
+  <strong>Text File:</strong>
+  <a href="#"><%= @application.text_file %></a>
 </p>
 
 <%= link_to 'Edit', edit_application_path(@application) %> |
