@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
+.app-wrap h1 {
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
+}
+
+.app-wrap {
+	background-color: rgba(10,10,10,.2);
+	width: 80%;
+	margin: 6em auto;
+	border-radius: 2px;
+	font-family: 'Slabo 27px', serif;
+}
+
+.app-table {
+	width: 70%;
+	text-align: center;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.app-notes {
+	font-size: 20px;
+	color: #F5483D;
+	font-style: italic;
+}
+
+.app-table a {
+	text-decoration: none;
+}
+
+.app-table a:hover{
+	color:black;
+}
+
+
+.new-app {
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+	height:30px;
+	width:120px;
+	background-color: #F5483D;
+	margin: 0 auto;
+	position: relative;
+	border: none;
+	border-radius: 3px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	
+}
+
+.new-app:hover{
+	background-color: #F1250C;
+}
+
+.new-app a {
+	text-decoration: none;
+	color: white;
+	padding-top: 10px;
+	font-size: 15px;
+}
+
+td {
+	padding: 15px;
+}
+
+
+
+

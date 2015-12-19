@@ -1,31 +1,34 @@
 <p id="notice"><%= notice %></p>
+<div class="app-wrap">
+  <div class="app-table">
+    <% if current_user.type == "Instructor" || current_user.type == "Officer" %>
+      <p class="app-notes">
+        <strong></strong>
+        <%= @application.notes %>
+      </p>
+    <% end %>
 
-<% if current_user.type == "Instructor" || current_user.type == "Officer" %>
-  <p>
-    <strong>Notes:</strong>
-    <%= @application.notes %>
-  </p>
-<% end %>
+    <p>
+      <strong></strong>
+      <a href="/students/<%= @application.student.id %>"> <%= @application.student.first_name %> <%= @application.student.last_name %></a>
+    </p>
 
-<p>
-  <strong>Student:</strong>
-  <a href="/students/<%= @application.student.id %>"> <%= @application.student.first_name %> <%= @application.student.last_name %></a>
-</p>
+    <p>
+      <strong></strong>
+        <a href="/courses/<%= @application.course.id %>"> <%= @application.course.name %> </a>
+    </p>
 
-<p>
-  <strong>Course:</strong>
-    <a href="/courses/<%= @application.course.id %>"> <%= @application.course.name %> </a>
-</p>
+    <p>
+      <strong>Application Status:</strong>
+      <%= @application.status %>
+    </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @application.status %>
-</p>
+    <p>
+      <strong>Application File:</strong>
+      <a href="#"><%= @application.text_file %></a>
+    </p>
 
-<p>
-  <strong>Text File:</strong>
-  <a href="#"><%= @application.text_file %></a>
-</p>
-
-<%= link_to 'Edit', edit_application_path(@application) %> |
-<%= link_to 'Back', applications_path %>
+    <%= link_to 'Edit', edit_application_path(@application) %> |
+    <%= link_to 'Back', applications_path %>
+  </div>
+</div>
