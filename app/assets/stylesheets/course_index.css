@@ -75,6 +75,7 @@
 .new-course-link.edit{
 	width: 80px;
 	margin-bottom: 10px;
+	font-size: 15px;
 
 }
 
@@ -83,6 +84,14 @@
 	margin-bottom: 10px;
 
 }
+
+.new-course-link.app2 {
+	font-size: 15px;
+	width:120px;
+	margin-bottom: 10px;
+
+}
+
 
 .courses-list {
 	font-size: 22px;
