@@ -16,4 +16,5 @@
  *= require sign_up_form_page
  *= require log_in_form_page
  *= require students
+ *= require application_style
  */

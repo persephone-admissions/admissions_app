@@ -1,33 +1,37 @@
 <p id="notice"><%= notice %></p>
+<div class="app-wrap">
+    <h1>All Applications</h1>
+  <div class="app-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Student</th>
+          <th>Course</th>
+          <th>Status</th>
+          <th>Notes</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      
+        <tbody>
+          <% @applications.each do |application| %>
+            <tr>
+              <td><%= application.student.first_name %> <%= application.student.last_name %></td>
+              <td><%= application.course.name %></td>
+              <td><%= application.status %></td>
+              <td><%= application.notes %></td>
+              <td><%= link_to 'Show', application %></td>
+              <td><%= link_to 'Edit', edit_application_path(application) %></td>
+              <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+    
+    </table>
+  </div>
 
-<h1>Listing Applications</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Student</th>
-      <th>Course</th>
-      <th>Status</th>
-      <th>Notes</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @applications.each do |application| %>
-      <tr>
-        <td><%= application.student.first_name %> <%= application.student.last_name %></td>
-        <td><%= application.course.name %></td>
-        <td><%= application.status %></td>
-        <td><%= application.notes %></td>
-        <td><%= link_to 'Show', application %></td>
-        <td><%= link_to 'Edit', edit_application_path(application) %></td>
-        <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Application', new_application_path %>
+    <br>
+    <div class="new-app">
+      <%= link_to 'New Application', new_application_path %>
+    </div>
+</div>
