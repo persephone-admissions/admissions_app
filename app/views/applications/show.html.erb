@@ -6,6 +6,11 @@
         <strong></strong>
         <%= @application.notes %>
       </p>
+      <% if current_user.type == "Instructor" %>
+        <%= link_to "Conduct Instructor Interview", course_application_questionnaire_path(@application.course, @application, @application.instructor_questionnaire) %>
+      <% else %>
+        <%= link_to "Conduct Admissions Officer Interview", course_application_questionnaire_path(@application.course, @application, @application.officer_questionnaire) %>
+      <% end %>
     <% end %>
 
     <p>
