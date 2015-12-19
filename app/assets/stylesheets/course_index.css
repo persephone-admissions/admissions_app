@@ -10,7 +10,7 @@
 .course-container {
 	/*background-color: rgba(252,212,52,.8);*/
 	background-color: rgba(10,10,10,.2);
-	width: 60%;
+	width: 70%;
 	margin: 6em auto;
 	border-radius: 2px;
 	font-family: 'Slabo 27px', serif;
@@ -75,6 +75,7 @@
 .new-course-link.edit{
 	width: 80px;
 	margin-bottom: 10px;
+	font-size: 15px;
 
 }
 
@@ -83,6 +84,14 @@
 	margin-bottom: 10px;
 
 }
+
+.new-course-link.app2 {
+	font-size: 15px;
+	width:120px;
+	margin-bottom: 10px;
+
+}
+
 
 .courses-list {
 	font-size: 22px;
@@ -114,13 +123,30 @@
 
 .text-area {
 	font-size: 15px;
-	width: 450px;
-	height: 70px;
-	max-width: 100%;
-	max-height: 100%;
+	max-width: 400px;
+	max-height: 75px;
 	border: 3px solid #cccccc;
 	border-radius: 10px;
 	padding: 5px;
 	font-family: 'Slabo 27px', serif;
 	overflow: scroll;
+	resize: none;
+}
+
+.text-field {
+	padding-top: 20px;
+	padding-bottom:10px;
+	text-align: center;
+	width: 50%;
+	margin: 0 auto;
+}
+
+.actions {
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.edit-course-links {
+	text-align: center;
+	padding-bottom: 10px;
 }
