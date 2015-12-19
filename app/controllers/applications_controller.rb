@@ -19,7 +19,6 @@ class ApplicationsController < ApplicationController
     @application = Application.new
     @student_id = session[:user_id]
     @course_id = params[:course_id]
-
   end
 
   # GET /applications/1/edit
@@ -45,6 +44,9 @@ class ApplicationsController < ApplicationController
   # PATCH/PUT /applications/1
   # PATCH/PUT /applications/1.json
   def update
+    @student_id = session[:user_id]
+    @course_id = params[:course_id]
+
     respond_to do |format|
       if @application.update(application_params)
         format.html { redirect_to @application, notice: 'Application was successfully updated.' }

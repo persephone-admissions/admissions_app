@@ -29,11 +29,11 @@
     <%= f.label :text_file %><br>
     <%= f.file_field :text_file %>
   </div>
+  <p>Accepts files ending in .doc, .docx, .pdf, .rtf, and .txt</p>
   <br>
   <div class="actions">
     <%= f.submit %>
   </div>
-
 
   <input type="hidden" name="[application]student_id" value="<%= @student_id %>">
   <input type="hidden" name="[application]course_id" value="<%= @course_id %>">

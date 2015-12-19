@@ -6,26 +6,27 @@
     <%= @application.notes %>
   </p>
 <% end %>
-
+<br>
 <p>
   <strong>Student:</strong>
-  <a href="/students/<%= @application.student.id %>"> <%= @application.student.first_name %> <%= @application.student.last_name %></a>
+  <a href="/students/<%= @application.student.id %>"> <%= @application.student.full_name %></a>
 </p>
-
+<br>
 <p>
   <strong>Course:</strong>
     <a href="/courses/<%= @application.course.id %>"> <%= @application.course.name %> </a>
 </p>
-
+<br>
 <p>
   <strong>Status:</strong>
   <%= @application.status %>
 </p>
-
+<br>
 <p>
   <strong>Text File:</strong>
-  <a href="#"><%= @application.text_file %></a>
+  <a href="<%= @application.text_file.url %>"><%= @application.text_file.url %></a>
 </p>
 
 <%= link_to 'Edit', edit_application_path(@application) %> |
 <%= link_to 'Back', applications_path %>
+

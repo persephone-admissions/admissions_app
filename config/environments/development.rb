@@ -42,13 +42,6 @@ end
 
 Paperclip.options[:command_path] = "/usr/local/bin/"
 
-# Paperclip::Attachment.default_options = {
-#   storage: :fog, 
-#   fog_credentials: 
-#     { provider: "Local",
-#     local_root: "#{Rails.root}/public"},
-#     fog_directory: "",
-#     fog_host: "localhost"
-# }
+# Paperclip::Attachment.default_options[:path] = ":rails_root/public/system/:rails_env/:class/:attachment/:id_partition/:filename"
 
 
