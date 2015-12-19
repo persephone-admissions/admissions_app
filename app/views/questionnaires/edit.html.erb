@@ -5,7 +5,7 @@
 	  <% @questionnaire.questions.each do |question| %>
 	    <div data-question-id=<%= question.id %>>
 	      <p><%= question.content %></p>
-	      <textarea hidden><%= question.content %></textarea>
+	      <textarea class="question-text-edit" hidden><%= question.content %></textarea>
 	      <button class="edit question">Edit Question</button>
 	      <button class="update question" hidden>Update Question</button>
 	      <button class="delete question">Remove</button>
