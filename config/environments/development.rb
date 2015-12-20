@@ -38,6 +38,22 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => 'smtp.gmail.com',
+    :port => '587',
+    :domain => 'gmail.com',
+    :authentification => :plain,
+    :enable_starttls_auto => true, 
+    :user_name => 'persephone.admissions@gmail.com',
+    :password => 'wdi08690'
+    }
+# ENV['GMAIL_PASSWORD_DEV']
+# ENV['GMAIL_USERNAME_DEV'], 
 end
 
 Paperclip.options[:command_path] = "/usr/local/bin/"
@@ -50,5 +66,6 @@ Paperclip.options[:command_path] = "/usr/local/bin/"
 #     fog_directory: "",
 #     fog_host: "localhost"
 # }
+
 
 
