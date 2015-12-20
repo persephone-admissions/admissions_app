@@ -2,7 +2,7 @@ $(document).ready(function() {
   $('button.new.question').click(function(event) {
     var questionnaire_id = $(event.target).data("questionnaire-id");
     var url = "questionnaires/" + questionnaire_id +  "/questions"
-    var qContent = $('textarea.new').val();
+    var qContent = $('textarea.new-text').val();
     jQuery.ajax({
       url: "/questionnaires/" + questionnaire_id +  "/questions",
       method: "POST",
@@ -10,12 +10,12 @@ $(document).ready(function() {
       dataType: "json",
       success: function(data){
         if (data.created) {
-          $('textarea.new').val('');
+          $('textarea.new-text').val('');
           var $newDiv = $("<div data-question-id=" + data.questionId + "></div>");
           var $newP = $('<p>');
           $newP.text(qContent);
           $newP.appendTo($newDiv);
-          var $newTextArea = $('<textarea hidden></textarea');
+          var $newTextArea = $('<textarea question-text-edit hidden></textarea');
           $newTextArea.val(qContent);
           $newTextArea.appendTo($newDiv);
           var $editButton = $("<button class='edit question'>Edit Question</button>");
