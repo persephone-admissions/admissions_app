@@ -11,6 +11,7 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    @applications = Application.where(student_id: params[:id])
   end
 
   # GET /students/new
