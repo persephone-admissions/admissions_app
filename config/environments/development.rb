@@ -49,11 +49,10 @@ Rails.application.configure do
     :domain => 'gmail.com',
     :authentification => :plain,
     :enable_starttls_auto => true, 
-    :user_name => 'persephone.admissions@gmail.com',
-    :password => 'wdi08690'
+    :user_name => ENV['GMAIL_USERNAME_DEV'],
+    :password => ENV['GMAIL_PASSWORD_DEV']
     }
-# ENV['GMAIL_PASSWORD_DEV']
-# ENV['GMAIL_USERNAME_DEV'], 
+
 end
 
 Paperclip.options[:command_path] = "/usr/local/bin/"
