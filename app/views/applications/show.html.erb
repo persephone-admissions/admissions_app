@@ -6,11 +6,22 @@
         <strong></strong>
         <%= @application.notes %>
       </p>
-      <% if current_user.type == "Instructor" && @application.status_id >= 3 %>
-        <%= link_to "Conduct Instructor Interview", course_application_questionnaire_path(@application.course, @application, @application.instructor_questionnaire) %>
-      <% elsif current_user.type == "Officer" && @application.status_id <= 3 %>
-        <%= link_to "Conduct Admissions Officer Interview", course_application_questionnaire_path(@application.course, @application, @application.officer_questionnaire) %>
+      <p>
+        <% if current_user.type == "Instructor" && @application.status_id >= 3 %>
+          <%= link_to "Conduct Instructor Interview", course_application_questionnaire_path(@application.course, @application, @application.instructor_questionnaire) %>
+        <% elsif current_user.type == "Officer" && @application.status_id <= 3 %>
+          <%= link_to "Conduct Admissions Officer Interview", course_application_questionnaire_path(@application.course, @application, @application.officer_questionnaire) %>
+        <% end %>
+      </p>
+
+      <% if @application.completed_officer_interview? %>
+        <p><%= link_to "Review Admissions Officer Interview", review_path(@application.course, @application, "officer") %></p>
       <% end %>
+
+      <% if @application.completed_instructor_interview? %>
+        <p><%= link_to "Review Instructor Interview", review_path(@application.course, @application, "instructor") %></p>
+      <% end %>
+
     <% end %>
 
 <% if current_user.type == "Instructor" || current_user.type == "Officer" %>
