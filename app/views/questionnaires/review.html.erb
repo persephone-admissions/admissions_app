@@ -1,11 +1,13 @@
-<h1>Reviewing <%= @type %>  interview for <%= @application.student.full_name %> for <%= link_to @application.course.name, @application.course %></h1>
+<div class="question-container">
+	<h1>Reviewing <%= @type %>  interview for <%= @application.student.full_name %> for <%= link_to @application.course.name, @application.course %></h1>
 
-<div class="answers">
-  <% @answers.each do |answer| %>
-    <div class="answer">
-      <p><%= answer.question.content %></p>
-      <p><%= answer.content %></p>
-    </div> <!-- .answer -->
-  <% end %>
+	<div class="answers">
+	  <% @answers.each do |answer| %>
+	    <div class="answer">
+	      <p class="question-head"><%= answer.question.content %></p>
+	      <p><%= answer.content %></p>
+	    </div> <!-- .answer -->
+	  <% end %>
 
-</div> <!-- .answers -->
+	</div> <!-- .answers -->
+</div>
