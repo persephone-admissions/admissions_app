@@ -1,10 +1,9 @@
 window.onload = function() {
     document.getElementById("start-button").onclick = function fun(){
-    function countdown( elementName, minutes, seconds ){
+        function countdown( elementName, minutes, seconds ){
         var element, endTime, hours, mins, msLeft, time;
 
-        function twoDigits( n )
-        {
+        function twoDigits( n ){
             return (n <= 9 ? "0" + n : n);
         }
 
@@ -25,11 +24,11 @@ window.onload = function() {
         endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
         updateTimer();
 
-    }
+        }
 
-    countdown( "countdown", 10, 0 );
-    countdown( "countdown2", 50, 0 );
-}
+        countdown( "countdown", 10, 0 );
+        countdown( "countdown2", 50, 0 );
+        }
 }
 
 
