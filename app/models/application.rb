@@ -24,11 +24,28 @@ class Application < ActiveRecord::Base
   end
 
   def completed_instructor_interview?
-    !instructor_answers.empty?
+    status.name == "In Person Interview Completed"
   end
 
   def completed_officer_interview?
-    !officer_answers.empty?
+    status.name == "Phone Interview Completed"
   end
+
+  def officer_interview_pending?
+    status.name == "Application Submitted"
+  end
+
+  def instructor_interview_pending?
+    status.name == "Phone Interview Passed"
+  end
+
+  def instructor_interview_scheduled?
+    status.name == "In Person Interview Scheduled"
+  end
+
+  def officer_interview_scheduled?
+    status.name == "Phone Interview Scheduled"
+  end
+
 
 end
