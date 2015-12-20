@@ -38,9 +38,25 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => 'smtp.gmail.com',
+    :port => '587',
+    :domain => 'gmail.com',
+    :authentification => :plain,
+    :enable_starttls_auto => true, 
+    :user_name => ENV['GMAIL_USERNAME_DEV'],
+    :password => ENV['GMAIL_PASSWORD_DEV']
+    }
+
 end
 
 Paperclip.options[:command_path] = "/usr/local/bin/"
+
 
 # not sure WHY the settings below aren't working, as they're supposed to the default settings, 
 # but the files don't link properly when it's enabled 
@@ -51,3 +67,4 @@ Paperclip.options[:command_path] = "/usr/local/bin/"
 # Paperclip::Attachment.default_options[:fog_credentials] = { provider: "Local", local_root: "#{Rails.root}/public"}
 # Paperclip::Attachment.default_options[:fog_directory] = ""
 # Paperclip::Attachment.default_options[:fog_host] = "http://localhost:3000"
+
