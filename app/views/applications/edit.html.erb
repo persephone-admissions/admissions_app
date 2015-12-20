@@ -1,6 +1,11 @@
-<h1>Editing Application</h1>
+<div class="app-wrap">
+	<h1>Editing Application</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @application %> |
-<%= link_to 'Back', applications_path %>
+	<%= render 'form' %>
+	<div class="app-links">
+		<div class="links">
+			<%= link_to 'Show', @application %> |
+			<%= link_to 'Back', applications_path %>
+		</div>
+	</div>
+</div>
