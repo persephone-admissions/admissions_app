@@ -1,3 +1,27 @@
+<!-- <div class="countdown-clock">
+	<h3>Interview Timer</h3>
+	<div id="countdown"></div>
+	<button id="start-button">Start</button>
+</div> -->
+
+<% if current_user.type == "Instructor" %>
+  <div class="countdown-clock">
+		<h3>Interview Timer</h3>
+		<div id="countdown"></div>
+		<button id="start-button">Start</button>
+	</div>
+<% elsif current_user.type == "Officer"  %>
+	<div class="countdown-clock">
+		<h3>Interview Timer</h3>
+		<div id="countdown2"></div>
+		<button id="start-button">Start</button>
+	</div>
+<% end %>
+
+
+
+
+
 <div class="question-container">
 	<h1><%= @questionnaire.questionnaire_type %> Interview for <%= @application.student.full_name %> for <%= link_to @questionnaire.course.name, @questionnaire.course %></h1>
 	<div class="question">
@@ -16,3 +40,4 @@
 	  <% end %>
 	</div>
 </div>
+

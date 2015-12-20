@@ -77,5 +77,6 @@
 
 .New-Student-Button:hover {
 	background-color: #F1250C;
+	cursor: pointer;
 }
 
