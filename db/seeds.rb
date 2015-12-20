@@ -38,11 +38,11 @@ a2 = Application.create(student_id: s2.id, course_id: c1.id, status_id: s1.id, n
 a3 = Application.create(student_id: s2.id, course_id: c2.id, status_id: s1.id, notes: "Very enthusiastic, spent a semester in college at a monastic retreat")
 a4 = Application.create(student_id: s3.id, course_id: c3.id, status_id: s1.id, notes: "Wants to start their own business, looking for networking opportunities")
 
-qn1 = Questionnaire.create(questionnaire_type: "Instructor", course: c1)
+# qn1 = Questionnaire.create(questionnaire_type: "Instructor", course: c1)
 
-q1 = Question.create(content: "Tell us about a time you overcame a challenge.", questionnaire_id: qn1.id)
+# q1 = Question.create(content: "Tell us about a time you overcame a challenge.", questionnaire_id: qn1.id)
 
-an1 = Answer.create(content: "One time...", question: q1, user_id: i1.id, application: a1)
+# an1 = Answer.create(content: "One time...", question: q1, user_id: i1.id, application: a1)
 
 c1.instructors.push(i1)
 c1.officers.push(o1)
