@@ -6,9 +6,9 @@
         <strong></strong>
         <%= @application.notes %>
       </p>
-      <% if current_user.type == "Instructor" %>
+      <% if current_user.type == "Instructor" && @application.status_id >= 3 %>
         <%= link_to "Conduct Instructor Interview", course_application_questionnaire_path(@application.course, @application, @application.instructor_questionnaire) %>
-      <% else %>
+      <% elsif current_user.type == "Officer" && @application.status_id <= 3 %>
         <%= link_to "Conduct Admissions Officer Interview", course_application_questionnaire_path(@application.course, @application, @application.officer_questionnaire) %>
       <% end %>
     <% end %>
@@ -32,7 +32,7 @@
 <br>
 <p>
   <strong>Status:</strong>
-  <%= @application.status %>
+  <%= @application.status.name %>
 </p>
 <br>
 <p>
