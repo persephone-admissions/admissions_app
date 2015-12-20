@@ -7,12 +7,20 @@
         <%= @application.notes %>
       </p>
       <p>
-        <% if current_user.type == "Instructor" %>
-          <%= link_to "Conduct Instructor Interview", course_application_questionnaire_path(@application.course, @application, @application.instructor_questionnaire) %>
-        <% elsif current_user.type == "Officer" %>
+      <% if current_user.type == "Officer" %>
+        <% if @application.officer_interview_pending? %>
+         <button>Officer Interview Scheduled</button>
+        <% elsif @application.officer_interview_scheduled? %>
           <%= link_to "Conduct Admissions Officer Interview", course_application_questionnaire_path(@application.course, @application, @application.officer_questionnaire) %>
         <% end %>
-      </p>
+    
+      <% elsif current_user.type == "Instructor" %>
+        <% if @application.instructor_interview_pending? %>
+         <button>Instructor Interview Scheduled</button>
+        <% elsif @application.instructor_interview_scheduled? %>
+          <%= link_to "Conduct Instructor Interview", course_application_questionnaire_path(@application.course, @application, @application.instructor_questionnaire) %>
+        <% end %>
+      <% end %>
 
       <% if @application.completed_officer_interview? %>
         <p><%= link_to "Review Admissions Officer Interview", review_path(@application.course, @application, "officer") %></p>
@@ -23,13 +31,6 @@
       <% end %>
 
     <% end %>
-
-<% if current_user.type == "Instructor" || current_user.type == "Officer" %>
-  <p>
-    <strong>Notes:</strong>
-    <%= @application.notes %>
-  </p>
-<% end %>
 <br>
 <p>
   <strong>Student:</strong>
@@ -53,4 +54,3 @@
 
 <%= link_to 'Edit', edit_application_path(@application) %> |
 <%= link_to 'Back', applications_path %>
-
