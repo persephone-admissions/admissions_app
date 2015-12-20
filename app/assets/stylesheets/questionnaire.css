@@ -31,6 +31,8 @@
 .question-container h1{
 	text-align: center;
 	font-family: 'Oswald', sans-serif;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 .question-container a {
@@ -90,4 +92,77 @@
 	margin: 0 auto;
 }
 
+.question-content {
+	text-align: center;
+	font-family: 'Slabo 27px', serif;
+	font-size: 20px;
+}
 
+.answers {
+	width:100%;
+	margin: 0 auto;
+}
+
+.answer {
+	padding: 5px;
+	margin-left: 30px;
+}
+
+.question-head {
+	font-weight: 700;
+	font-size: 20px;
+}
+
+
+.countdown-clock {
+	width:40%;
+	position: relative;
+	font-family: 'Oswald', sans-serif;
+	margin-left: 20px;
+	margin-bottom: -100px;
+}
+
+.countdown-clock button {
+	text-align: center;
+	font-size: 15px;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	height:30px;
+	width:100px;
+	background-color: #F5483D;
+	margin: 0 auto;
+	border: none;
+	border-radius: 3px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	text-decoration: none;
+}
+
+
+.countdown-clock button:hover {
+	background-color: #F1250C;
+	cursor: pointer;
+}
+
+
+#countdown {
+    color: #F5483D;
+    margin: 0 auto;
+    height:50px;
+    width:50%;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline;
+}
+
+ #countdown2 {
+ 	color: #F5483D;
+    margin: 0 auto;
+    height:50px;
+    width:50%;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline;
+  }

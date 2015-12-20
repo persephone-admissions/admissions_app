@@ -12,32 +12,34 @@
   <% end %>
 
   <% if current_user.type == "Instructor" || current_user.type == "Officer" %>
-    <div class="question-field-container">
-      <div class="question-text">
-          <%= f.label :notes %><br>
-          <%= f.text_area :notes  %>
-      </div>
+    <div class="field">
+      <%= f.label :notes %><br>
+      <%= f.text_area :notes %>
+      <br>
     </div>
-
   <% end %>
-
-  <br>
+    
   <div class="field">
-  <div class="text-upload">
-    <div class="text-upload-center">
+    <%= f.select :status_id, [
+      ['Initated Application Process, Next Step: Submit Text File', 1], 
+      ['Submitted Complete Application, Next Step: Phone Interview', 2],
+      ['Passed Phone Interview, Next Step: In-Person Interview', 3],
+      ['Passed In-Person Interview, Accepted', 4]
+    ]%>
+  </div>
+  
+  <br>
+  <% if current_user.type == "Student" %>
+    <div class="field">
       <%= f.label :text_file %><br>
       <%= f.file_field :text_file %>
     </div>
-  </div>
-  <p>Accepts files ending in .doc, .docx, .pdf, .rtf, and .txt</p>
-  <br>
+    <p>Accepts files ending in .doc, .docx, .pdf, .rtf, and .txt</p>
+    <br>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
-
-  <input type="hidden" name="[application]status_id" value="2">
-  <input type="hidden" name="[application]student_id" value="<%= @student_id %>">
-  <input type="hidden" name="[application]course_id" value="<%= @course_id %>">
 
 <% end %>
 

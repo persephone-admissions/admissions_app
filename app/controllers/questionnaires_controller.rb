@@ -27,6 +27,16 @@ class QuestionnairesController < ApplicationController
 
   end
 
+  def review
+    @application = Application.find(params[:application_id])
+    @type = params[:type]
+    if @type = "instructor"
+      @answers = @application.instructor_answers
+    else
+      @answers = @application.officer_answers
+    end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

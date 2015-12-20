@@ -6,34 +6,51 @@
         <strong></strong>
         <%= @application.notes %>
       </p>
-      <% if current_user.type == "Instructor" %>
-        <%= link_to "Conduct Instructor Interview", course_application_questionnaire_path(@application.course, @application, @application.instructor_questionnaire) %>
-      <% else %>
-        <%= link_to "Conduct Admissions Officer Interview", course_application_questionnaire_path(@application.course, @application, @application.officer_questionnaire) %>
+      <p>
+        <% if current_user.type == "Instructor" %>
+          <%= link_to "Conduct Instructor Interview", course_application_questionnaire_path(@application.course, @application, @application.instructor_questionnaire) %>
+        <% elsif current_user.type == "Officer" %>
+          <%= link_to "Conduct Admissions Officer Interview", course_application_questionnaire_path(@application.course, @application, @application.officer_questionnaire) %>
+        <% end %>
+      </p>
+
+      <% if @application.completed_officer_interview? %>
+        <p><%= link_to "Review Admissions Officer Interview", review_path(@application.course, @application, "officer") %></p>
       <% end %>
+
+      <% if @application.completed_instructor_interview? %>
+        <p><%= link_to "Review Instructor Interview", review_path(@application.course, @application, "instructor") %></p>
+      <% end %>
+
     <% end %>
 
-    <p>
-      <strong></strong>
-      <a href="/students/<%= @application.student.id %>"> <%= @application.student.first_name %> <%= @application.student.last_name %></a>
-    </p>
+<% if current_user.type == "Instructor" || current_user.type == "Officer" %>
+  <p>
+    <strong>Notes:</strong>
+    <%= @application.notes %>
+  </p>
+<% end %>
+<br>
+<p>
+  <strong>Student:</strong>
+  <a href="/students/<%= @application.student.id %>"> <%= @application.student.full_name %></a>
+</p>
+<br>
+<p>
+  <strong>Course:</strong>
+    <a href="/courses/<%= @application.course.id %>"> <%= @application.course.name %> </a>
+</p>
+<br>
+<p>
+  <strong>Status:</strong>
+  <%= @application.status.name %>
+</p>
+<br>
+<p>
+  <strong>Text File:</strong>
+  <a href="<%= @application.text_file.url %>"><%= @application.text_file.url %></a>
+</p>
 
-    <p>
-      <strong></strong>
-        <a href="/courses/<%= @application.course.id %>"> <%= @application.course.name %> </a>
-    </p>
+<%= link_to 'Edit', edit_application_path(@application) %> |
+<%= link_to 'Back', applications_path %>
 
-    <p>
-      <strong>Application Status:</strong>
-      <%= @application.status %>
-    </p>
-
-    <p>
-      <strong>Application File:</strong>
-      <a href="#"><%= @application.text_file %></a>
-    </p>
-
-    <%= link_to 'Edit', edit_application_path(@application) %> |
-    <%= link_to 'Back', applications_path %>
-  </div>
-</div>

@@ -21,16 +21,28 @@ i1 = User.create(first_name: "Kevin", last_name: "Hensing", type: "Instructor", 
 o1 = User.create(first_name: "Michelle", last_name: "Spyridou", type: "Officer", email: "m.spyridou@ga.com", password: "drag0nz", phone_number: "449-637-1950", street_address: "1283 2nd Ave, Apt 16", city: "Manhattan", state: "NY", country: "USA")
 
 c1 = Course.create(name: "Web Development Immersive", description: "Full-Stack Engineering")
+c2 = Course.create(name: "Mindfulness for Entrepreneurs", description: "Zen meditation practices for self-starters, meets 3x a week, from 10a-11a M, W, F")
+c3 = Course.create(name: "Business Development Bootcamp", description: "Learn how to build relationships with clients and parent organizations alike")
 
-s1 = Status.create(name: "Awaiting Text File Upload")
+s1 = Status.create(name: "Rejected")
+s2 = Status.create(name: "Application Submitted")
+s3 = Status.create(name: "Phone Interview Scheduled")
+s4 = Status.create(name: "Phone Interview Completed")
+s5 = Status.create(name: "Phone Interview Passed")
+s5 = Status.create(name: "In Person Interview Scheduled")
+s6 = Status.create(name: "In Person Interview Completed")
+s7 = Status.create(name: "Accepted")
 
-a1 = Application.create(student_id: s1.id, course_id: c1.id, notes: "Great candidate!")
+a1 = Application.create(student_id: s1.id, course_id: c1.id, status_id: s1.id, notes: "Great candidate!")
+a2 = Application.create(student_id: s2.id, course_id: c1.id, status_id: s1.id, notes: "Lacks experience but looks promising")
+a3 = Application.create(student_id: s2.id, course_id: c2.id, status_id: s1.id, notes: "Very enthusiastic, spent a semester in college at a monastic retreat")
+a4 = Application.create(student_id: s3.id, course_id: c3.id, status_id: s1.id, notes: "Wants to start their own business, looking for networking opportunities")
 
-qn1 = Questionnaire.create(questionnaire_type: "Instructor", course: c1)
+# qn1 = Questionnaire.create(questionnaire_type: "Instructor", course: c1)
 
-q1 = Question.create(content: "Tell us about a time you overcame a challenge.", questionnaire_id: qn1.id)
+# q1 = Question.create(content: "Tell us about a time you overcame a challenge.", questionnaire_id: qn1.id)
 
-an1 = Answer.create(content: "One time...", question: q1, user_id: i1.id, application: a1)
+# an1 = Answer.create(content: "One time...", question: q1, user_id: i1.id, application: a1)
 
 c1.instructors.push(i1)
 c1.officers.push(o1)

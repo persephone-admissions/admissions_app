@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post   '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
+  get 'courses/:course_id/applications/:application_id/questionnaires/:type/review' => 'questionnaires#review', as: :review
+
   resources :applications
   # We'll want to remove the non-nested :applications resource
   # eventually but I'm leaving it in for now to prevent the scaffolded 
@@ -26,6 +28,7 @@ Rails.application.routes.draw do
   delete 'questionnaires/:questionnaire_id/questions/:id' => 'questions#destroy'
 
   post 'applications/:application_id/answers' => 'answers#create'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

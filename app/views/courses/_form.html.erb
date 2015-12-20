@@ -34,4 +34,9 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  <div class="actions">
+    <%= form_for @course, url: course_path(@course), html: {method: "delete"} do |f| %>
+      <%=f.submit "Delete Course" %>
+    <% end %>
+  </div>
 <% end %>

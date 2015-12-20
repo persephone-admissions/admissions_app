@@ -5,7 +5,7 @@ class Application < ActiveRecord::Base
   has_many :answers
 
   has_attached_file :text_file
-  validates_attachment_file_name :text_file, matches: [/doc\Z/, /txt\Z/, /docx\Z/, /pdf\Z/, /md\Z/, /rtf\Z/]
+  validates_attachment_file_name :text_file, matches: [/doc\Z/, /txt\Z/, /docx\Z/, /pdf\Z/, /rtf\Z/]
 
   def instructor_questionnaire
     course.instructor_questionnaire
@@ -16,11 +16,19 @@ class Application < ActiveRecord::Base
   end
 
   def instructor_answers
-    answers.where { |answer| answer.user.type == "Instructor" }
+    answers.select { |answer| answer.user.type == "Instructor" }
   end
 
   def officer_answers
-    answers.where { |answer| answer.user.type == "Officer" }
+    answers.select { |answer| answer.user.type == "Officer" }
+  end
+
+  def completed_instructor_interview?
+    !instructor_answers.empty?
+  end
+
+  def completed_officer_interview?
+    !officer_answers.empty?
   end
 
 end

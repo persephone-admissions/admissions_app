@@ -11,7 +11,7 @@ class ApplicationsController < ApplicationController
   # GET /applications/1
   # GET /applications/1.json
   def show
-    @application = Application.find(params[:id])
+    @application = Application.find(params[:id])    
   end
 
   # GET /applications/new
@@ -19,11 +19,13 @@ class ApplicationsController < ApplicationController
     @application = Application.new
     @student_id = session[:user_id]
     @course_id = params[:course_id]
-
+    @application.status_id = 2
   end
 
   # GET /applications/1/edit
   def edit
+    @student_id = session[:user_id]
+    @course_id = params[:course_id]
   end
 
   # POST /applications
@@ -46,6 +48,9 @@ class ApplicationsController < ApplicationController
   # PATCH/PUT /applications/1
   # PATCH/PUT /applications/1.json
   def update
+    @student_id = session[:user_id]
+    @course_id = params[:course_id]
+
     respond_to do |format|
       if @application.update(application_params)
         format.html { redirect_to @application, notice: 'Application was successfully updated.' }

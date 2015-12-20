@@ -58,14 +58,14 @@ end
 
 Paperclip.options[:command_path] = "/usr/local/bin/"
 
-# Paperclip::Attachment.default_options = {
-#   storage: :fog, 
-#   fog_credentials: 
-#     { provider: "Local",
-#     local_root: "#{Rails.root}/public"},
-#     fog_directory: "",
-#     fog_host: "localhost"
-# }
 
+# not sure WHY the settings below aren't working, as they're supposed to the default settings, 
+# but the files don't link properly when it's enabled 
+# (although the files "attach", the urls don't reflect the :rails_env and therefore create broken links)
+# Paperclip::Attachment.default_options[:path] = ":rails_root/public/system/:rails_env/:class/:attachment/:id_partition/:filename"
 
+# Paperclip::Attachment.default_options[:storage] = :fog
+# Paperclip::Attachment.default_options[:fog_credentials] = { provider: "Local", local_root: "#{Rails.root}/public"}
+# Paperclip::Attachment.default_options[:fog_directory] = ""
+# Paperclip::Attachment.default_options[:fog_host] = "http://localhost:3000"
 
