@@ -67,5 +67,54 @@ td {
 }
 
 
+.question-text-app {
+	font-size: 15px;
+	height:100%;
+	width: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	border: 3px solid #cccccc;
+	border-radius: 10px;
+	padding: 5px;
+	font-family: 'Slabo 27px', serif;
+	overflow: scroll;
+	resize: none;
+}
 
+.question-field-container {
+	width: 100%;
+	margin: 0 auto;
 
+}
+
+.question-text {
+	text-align: center;
+	width: 100%;
+}
+
+.status-app {
+	text-align: center;
+	margin: 0 auto;
+	width: 80%;
+	padding:20px;
+}
+.app-links{
+	width:80%;
+	margin: 0 auto;
+
+}
+
+.links{
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.text-upload {
+	width:100%;
+}
+
+.text-upload-center {
+	width:18%;
+	margin: 0 auto;
+	text-align: center;
+}
