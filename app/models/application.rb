@@ -16,11 +16,19 @@ class Application < ActiveRecord::Base
   end
 
   def instructor_answers
-    answers.where { |answer| answer.user.type == "Instructor" }
+    answers.select { |answer| answer.user.type == "Instructor" }
   end
 
   def officer_answers
-    answers.where { |answer| answer.user.type == "Officer" }
+    answers.select { |answer| answer.user.type == "Officer" }
+  end
+
+  def completed_instructor_interview?
+    !instructor_answers.empty?
+  end
+
+  def completed_officer_interview?
+    !officer_answers.empty?
   end
 
 end
