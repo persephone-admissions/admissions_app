@@ -1,10 +1,18 @@
-<h1><%= @questionnaire.questionnaire_type %> Interview for <%= @application.student.full_name %> for <%= link_to @questionnaire.course.name, @questionnaire.course %></h1>
-<div class="questions">
-  <%= form_tag("/applications/#{@application.id}/answers", method: :post) do %>
-    <% @questionnaire.questions.each do |question| %>
-      <p><%= question.content %></p>
-      <%= text_area_tag "answers[#{question.id}]" %>
-    <% end %>
-    <%= submit_tag("Save Answers") %>
-  <% end %>
+<div class="question-container">
+	<h1><%= @questionnaire.questionnaire_type %> Interview for <%= @application.student.full_name %> for <%= link_to @questionnaire.course.name, @questionnaire.course %></h1>
+	<div class="question">
+	  <%= form_tag("/applications/#{@application.id}/answers", method: :post) do %>
+	    <% @questionnaire.questions.each do |question| %>
+	    <div class="question-content">
+	    	<p><%= question.content %></p>
+	    </div>
+	    <div class="question-text">
+	    	<%= text_area_tag "answers[#{question.id}]" %>
+	    </div>
+	    <% end %>
+	    <div class="actions">
+	    	<%= submit_tag("Save Answers") %>
+	    </div>
+	  <% end %>
+	</div>
 </div>
