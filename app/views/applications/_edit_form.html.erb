@@ -12,12 +12,15 @@
   <% end %>
 
   <% if current_user.type == "Instructor" || current_user.type == "Officer" %>
-    <div class="field">
-      <%= f.label :notes %><br>
-      <%= f.text_area :notes %>
+    <div class="text-contain">
+      <div class="question-text-app-contain">
+        <%= f.label :notes %><br>
+        <%= f.text_area :notes, class: 'question-text-app' %>
+      </div>
       <br>
     </div>
   <% end %>
+
 
   <br>
   <% if current_user.type == "Student" %>

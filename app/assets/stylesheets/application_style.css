@@ -70,7 +70,7 @@ td {
 .question-text-app {
 	font-size: 15px;
 	height:100%;
-	width: 100%;
+	width: 50%;
 	max-width: 100%;
 	max-height: 100%;
 	border: 3px solid #cccccc;
@@ -79,6 +79,17 @@ td {
 	font-family: 'Slabo 27px', serif;
 	overflow: scroll;
 	resize: none;
+	
+}
+
+.question-text-app { 
+	text-align: center;
+
+}
+
+.text-contain {
+	text-align: center;
+
 }
 
 .question-field-container {
@@ -115,6 +126,11 @@ td {
 
 .text-upload-center {
 	width:18%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.drop-down {
 	margin: 0 auto;
 	text-align: center;
 }
