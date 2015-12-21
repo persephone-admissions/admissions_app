@@ -9,14 +9,24 @@
       <p>
       <% if current_user.type == "Officer" %>
         <% if @application.officer_interview_pending? %>
-         <button>Officer Interview Scheduled</button>
+
+          <%= form_for @application, url: course_application_path(@application.course, @application), html: {method: "update"} do |f| %>
+            <input type="hidden" name="[application]status_id" value="3">
+            <%=f.submit "Officer Interview Scheduled" %>
+          <% end %>
+
         <% elsif @application.officer_interview_scheduled? %>
           <%= link_to "Conduct Admissions Officer Interview", course_application_questionnaire_path(@application.course, @application, @application.officer_questionnaire) %>
         <% end %>
     
       <% elsif current_user.type == "Instructor" %>
         <% if @application.instructor_interview_pending? %>
-         <button>Instructor Interview Scheduled</button>
+
+          <%= form_for @application, url: course_application_path(@application.course, @application), html: {method: "update"} do |f| %>
+            <input type="hidden" name="[application]status_id" value="6">
+            <%=f.submit "Instructor Interview Scheduled" %>
+          <% end %>
+
         <% elsif @application.instructor_interview_scheduled? %>
           <%= link_to "Conduct Instructor Interview", course_application_questionnaire_path(@application.course, @application, @application.instructor_questionnaire) %>
         <% end %>

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   get 'courses/:course_id/applications/:application_id/questionnaires/:type/review' => 'questionnaires#review', as: :review
+  post 'courses/:course_id/applications/:application_id' => 'applications#update'
+  get 'courses/:course_id/applications/:application_id' => 'applications#show'
 
   resources :applications
   # We'll want to remove the non-nested :applications resource

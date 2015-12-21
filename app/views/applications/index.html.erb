@@ -18,7 +18,7 @@
             <tr>
               <td><%= application.student.first_name %> <%= application.student.last_name %></td>
               <td><%= application.course.name %></td>
-              <td><%= application.status %></td>
+              <td><%= application.status.name %></td>
               <td><%= application.notes %></td>
               <td><%= link_to 'Show', application %></td>
               <td><%= link_to 'Edit', edit_application_path(application) %></td>
