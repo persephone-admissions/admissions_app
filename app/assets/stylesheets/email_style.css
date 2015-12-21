@@ -1,0 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
+
+.email-container {
+	font-family: 'Slabo 27px', serif;
+}
+
+.email-container h1{
+	font-family: 'Oswald', sans-serif;
+
+}
+
