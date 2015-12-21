@@ -31,4 +31,20 @@ class Application < ActiveRecord::Base
     !officer_answers.empty?
   end
 
+  def officer_interview_pending?
+    status.name == "Application Submitted"
+  end
+
+  def instructor_interview_pending?
+    status.name == "Phone Interview Passed"
+  end
+
+  def instructor_interview_scheduled?
+    status.name == "In Person Interview Scheduled"
+  end
+
+  def officer_interview_scheduled?
+    status.name == "Phone Interview Scheduled"
+  end
+
 end

@@ -30,6 +30,9 @@ gem 'paperclip', "~> 4.3"
 # Use RedCarpet to enable markdown
 gem 'redcarpet'
 
+# User Mail to enable actionmailer
+gem 'mail'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
