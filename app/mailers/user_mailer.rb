@@ -6,10 +6,10 @@ class UserMailer < ApplicationMailer
     mail(to: @application.email, subject: 'Welcome to General Assembly')
   end
 
-  def welcome_officer(application)
-  	@application = application
+  def welcome_officer(employee)
+  	@employee = employee
   
-    	mail(to: @application.email, subject: 'You have an interview to set up')
+    	mail(to: @employee.email, subject: 'You have an interview to set up')
 	
   end
 
@@ -23,5 +23,8 @@ class UserMailer < ApplicationMailer
   	mail(to: @application.email, subject: 'General Assembly Status Update')
   end
 
-
+  def instructor_email(employee)
+  	@employee = employee
+  	mail(to: @employee.email, subject: 'You have an interview to set up')
+  end
 end
