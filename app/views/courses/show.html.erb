@@ -15,6 +15,24 @@
       <li>City:
         <%= @course.city %>
       </li>
+      <li>Instructors: 
+        <ul>
+          <%= @course.instructors.each do |instructor| %>
+            <% if instructor %>
+              <li><%= instructor.full_name %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </li>
+      <li>Officers:
+        <ul>
+          <%= @course.officers.each do |officer| %>
+            <% if officer %>
+              <li><%= officer.full_name %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </li>
     </ul>
 
     <% if @current_user %>

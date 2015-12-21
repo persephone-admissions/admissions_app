@@ -1,11 +1,11 @@
-class EmployeesController < ApplicationController
+class EmployeesController < UsersController
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
   # before_action :authorize, except: [:create, :new]
 
   # GET /employees
   # GET /employees.json
   def index
-    @employees = User.where("type= 'Instructor'" || "type= 'Officer'")
+    @employees = User.where("type= 'Instructor'") + User.where("type= 'Officer'")
   end
 
   # GET /employees/1
@@ -21,6 +21,7 @@ class EmployeesController < ApplicationController
 
   # GET /employees/1/edit
   def edit
+    @employee = User.find(params[:id])
   end
 
   # POST /employees
