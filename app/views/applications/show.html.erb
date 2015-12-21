@@ -62,5 +62,5 @@
   <a href="<%= @application.text_file.url %>"><%= @application.text_file.url %></a>
 </p>
 
-<%= link_to 'Edit', edit_application_path(@application) %> |
+<%= link_to 'Edit', edit_course_application_path(@application.course, @application) %> |
 <%= link_to 'Back', applications_path %>

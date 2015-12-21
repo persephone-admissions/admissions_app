@@ -20,8 +20,8 @@
               <td><%= application.course.name %></td>
               <td><%= application.status.name %></td>
               <td><%= application.notes %></td>
-              <td><%= link_to 'Show', application %></td>
-              <td><%= link_to 'Edit', edit_application_path(application) %></td>
+              <td><%= link_to 'Show', course_application_path(application.course, application) %></td>
+              <td><%= link_to 'Edit', edit_course_application_path(application.course, application) %></td>
               <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
