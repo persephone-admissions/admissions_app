@@ -12,8 +12,10 @@ class UserMailer < ApplicationMailer
     # @app = application.applications.first
     # @url = course_application_url(@app.course, @app)
 
-  def welcome_officer(employee)
+  def welcome_officer(employee, application)
   	@employee = employee
+  	@application = application 
+  	@url = course_application_url(@application.course, @application)
   	mail(to: @employee.email, subject: 'You have an interview to set up')
   end
 
