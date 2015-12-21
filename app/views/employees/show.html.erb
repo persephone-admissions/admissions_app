@@ -12,11 +12,11 @@
 	  <%= @employee.type %>
 	</h4>
 	<h4>Courses:</h4>
-		<ul>
+		<div class="center-course">
 			<% @employee.courses.each do |course| %>
-				<li><a href="/courses/<%= course.id %>"><%= course.name %></a></li>
+				<p><a href="/courses/<%= course.id %>"><%= course.name %></a></p>
 			<% end %>
-		</ul>
+		</div>
 
 	<%= link_to 'Edit', edit_employee_path(@employee) %> |
 	<%= link_to 'Back', employees_path %>
