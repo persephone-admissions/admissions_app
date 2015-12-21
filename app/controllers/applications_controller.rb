@@ -39,7 +39,7 @@ class ApplicationsController < ApplicationController
 
     respond_to do |format|
       if @application.save
-        UserMailer.welcome_email(@application.student).deliver
+        UserMailer.welcome_email(@application.student, @application).deliver
         
         @application.course.officers.each do |instructor|
           UserMailer.welcome_officer(instructor).deliver
