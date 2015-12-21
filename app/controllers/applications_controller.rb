@@ -38,6 +38,7 @@ class ApplicationsController < ApplicationController
 
     respond_to do |format|
       if @application.save
+        UserMailer.welcome_email(@application.student).deliver
         format.html { redirect_to @application, notice: 'Application was successfully created.' }
         format.json { render :show, status: :created, location: @application }
       else
