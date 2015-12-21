@@ -7,15 +7,17 @@
 <% if current_user.type == "Instructor" %>
   <div class="countdown-clock">
 		<h3>Interview Timer</h3>
-		<div id="countdown"></div>
+		<div id="countdown"></div><br>
 		<button id="start-button">Start</button>
 	</div>
-<% elsif current_user.type == "Officer"  %>
-	<div class="countdown-clock">
-		<h3>Interview Timer</h3>
-		<div id="countdown2"></div>
-		<button id="start-button">Start</button>
-	</div>
+
+	<% elsif current_user.type == "Officer"  %>
+		<div class="countdown-clock">
+			<h3>Interview Timer</h3>
+			<div id="countdown2"></div>
+			<button id="start-button">Start</button>
+		</div>
+
 <% end %>
 
 
