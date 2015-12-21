@@ -15,13 +15,14 @@
 				<p><a href="/courses/<%= course.id %>"><%= course.name %></a></p>
 			<% end %>
 
-		</ul>
 		</div>
-		<h4>Applicants:</h4>
-		<% @employee.applications.flatten.each do |application| %>
-			<li><%= link_to application.student.first_name, course_application_path(application.course, application) %></li>
-			
-		<% end %>
+	<h4>Applicants:</h4>
+		<div class="center-course">
+			<% @employee.applications.flatten.each do |application| %>
+				<p><%= link_to application.student.first_name, course_application_path(application.course, application) %></p>
+				
+			<% end %>
+		</div>
 
 
 	<%= link_to 'Edit', edit_employee_path(@employee) %> |
