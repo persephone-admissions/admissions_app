@@ -11,7 +11,8 @@ class ApplicationsController < ApplicationController
   # GET /applications/1
   # GET /applications/1.json
   def show
-    @application = Application.find(params[:id])    
+    @student_id = session[:user_id]
+    @course_id = params[:course_id]    
   end
 
   # GET /applications/new
@@ -19,7 +20,9 @@ class ApplicationsController < ApplicationController
     @application = Application.new
     @student_id = session[:user_id]
     @course_id = params[:course_id]
-    @application.status_id = 2
+    # I believe this is redundant because we have a hidden input in the new_form that sets status_id = 2
+    # but am keeping it here for now just in case
+    # @application.status_id = 2
   end
 
   # GET /applications/1/edit
@@ -53,7 +56,7 @@ class ApplicationsController < ApplicationController
 
     respond_to do |format|
       if @application.update(application_params)
-        format.html { redirect_to @application, notice: 'Application was successfully updated.' }
+        format.html { redirect_to @course_application_path(@application.course, @application), notice: 'Application was successfully updated.' }
         format.json { render :show, status: :ok, location: @application }
       else
         format.html { render :edit }
