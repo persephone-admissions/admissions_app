@@ -12,24 +12,28 @@
   <% end %>
 
   <% if current_user.type == "Instructor" || current_user.type == "Officer" %>
-    <div class="field">
-      <%= f.label :notes %><br>
-      <%= f.text_area :notes %>
+    <div class="text-contain">
+      <div class="question-text-app-contain">
+        <%= f.label :notes %><br>
+        <%= f.text_area :notes, class: 'question-text-app' %>
+      </div>
       <br>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.select :status_id, [
-      ['Rejected', 1], 
-      ['Application Submitted', 2],
-      ['Phone Interview Scheduled', 3],
-      ['Phone Interview Completed', 4],
-      ['Phone Interview Passed', 5],
-      ['In Person Interview Scheduled', 6],
-      ['In Person Interview Completed', 7],
-      ['Accepted', 8]
-    ]%>
+  <div>
+    <div class="drop-down">
+      <%= f.select :status_id, [
+        ['Rejected', 1], 
+        ['Application Submitted', 2],
+        ['Phone Interview Scheduled', 3],
+        ['Phone Interview Completed', 4],
+        ['Phone Interview Passed', 5],
+        ['In Person Interview Scheduled', 6],
+        ['In Person Interview Completed', 7],
+        ['Accepted', 8]
+      ]%>
+      </div>
   </div>
   
   <br>
