@@ -31,4 +31,5 @@ We used [Trello](https://trello.com/b/FQhVfIbj) to stay organized.
 ![ERDs](https://raw.githubusercontent.com/persephone-admissions/admissions_app/master/img/ERD.png)
 
 ##Wireframes:
-TK
+![WireFrames](https://raw.githubusercontent.com/persephone-admissions/admissions_app/master/img/wireframe_1)
+
