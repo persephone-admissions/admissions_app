@@ -77,21 +77,19 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-<<<<<<< HEAD
   config.paperclip_defaults = { 
     storage: :fog, 
     fog_credentials: { 
-      aws_access_key_id: 'AWS_PERSEPHONE_ADMISSIONS_APP_ACCESS_KEY',
-      aws_secret_access_key: 'AWS_PERSEPHONE_ADMISSIONS_APP_SECRET_ACCESS_KEY',
+      aws_access_key_id: ENV['AWS_PERSEPHONE_ADMISSIONS_APP_ACCESS_KEY'],
+      aws_secret_access_key: ENV['AWS_PERSEPHONE_ADMISSIONS_APP_SECRET_ACCESS_KEY'],
       provider: 'AWS',
-      region: 'US Standard',
+      region: 'us-east-1',
       scheme: 'https'
     },
     fog_directory: "persephoneproject3admissions", 
     path: "/applications/text_files/:id_partition/:filename"
   }
 
-=======
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true,
@@ -102,8 +100,7 @@ Rails.application.configure do
   :user_name            => ENV['GMAIL_SMTP_USER'],
   :password             => ENV['GMAIL_SMTP_PASSWORD']
   } 
->>>>>>> 0913a13eee112bc1e903bca184d2ee36df37fbaa
-end
+
 
 # Paperclip::Attachment.default_options[:storage] = :fog
 # Paperclip::Attachment.default_options[:fog_credentials] = { 
