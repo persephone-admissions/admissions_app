@@ -41,10 +41,10 @@ class ApplicationsController < ApplicationController
 
     respond_to do |format|
       if @application.save
-        UserMailer.welcome_email(@application.student, @application).deliver
+        UserMailer.welcome_email(@application.student).deliver
         
         @application.course.officers.each do |instructor|
-          UserMailer.welcome_officer(instructor, @application).deliver
+          UserMailer.welcome_officer(instructor).deliver
         end 
         
         format.html { redirect_to course_application_path(@application.course, @application), notice: 'Application was successfully created.' }
