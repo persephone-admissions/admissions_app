@@ -9,11 +9,12 @@ Rails.application.routes.draw do
 
   get 'courses/:course_id/applications/:application_id/questionnaires/:type/review' => 'questionnaires#review', as: :review
   
-  get 'courses/:course_id/applications/:application_id/edit' => 'applications#edit'
-  post 'courses/:course_id/applications/:application_id' => 'applications#update'
-  get 'courses/:course_id/applications/:application_id' => 'applications#show'
+  # get 'courses/:course_id/applications/new' => 'applications#new'
+  # get 'courses/:course_id/applications/:application_id/edit' => 'applications#edit'
+  # post 'courses/:course_id/applications/:application_id' => 'applications#update'
+  # get 'courses/:course_id/applications/:application_id' => 'applications#show'
 
-  resources :applications
+  # resources :applications
   # We'll want to remove the non-nested :applications resource
   # eventually but I'm leaving it in for now to prevent the scaffolded 
   # applications views from getting angry before we're ready to fix them.

@@ -1,4 +1,4 @@
-<%= form_for @application, url: course_application_path(@application.course, @application), html: {method: "update"} do |f| %>
+<%= form_for @application, url: course_application_path(@application.course, @application), method: :patch do |f| %>
   <% if @application.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@application.errors.count, "error") %> prohibited this application from being saved:</h2>
