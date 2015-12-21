@@ -50,6 +50,32 @@
 	text-align: center;
 }
 
+.user-container3 {
+	padding: 10px;
+	background-color: rgba(10,10,10,.2);
+	width: 80%;
+	text-align: center;
+	margin: 4em auto;
+	border-radius: 2px;
+	font-family: 'Slabo 27px', serif;
+}
+
+.employee-table {
+	text-align: center;
+	width: 100%;
+}
+
+.employee-table1 {
+	width: 60%;
+	margin: 0 auto;
+	overflow: scroll;
+}
+
+.user-container3 h1 {
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
+}
+
 
 .student-table {
 	width: 70%;
@@ -84,3 +110,10 @@
 	cursor: pointer;
 }
 
+.center-course{
+
+	width:100%;
+}
+.center-course a {
+	text-align: center;
+}

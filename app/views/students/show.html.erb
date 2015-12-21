@@ -1,33 +1,27 @@
-<p id="notice"><%= notice %></p>
-
+<!-- <p id="notice"><%= notice %></p> -->
   <div class="user-container2">
-
     <h3>
-      <!-- <strong>Student Name:</strong> -->
       <%= @student.first_name %> <%= @student.last_name %>
     </h3>
 
     <h4>
-      <!-- <strong>Email:</strong> -->
       <a href="mailto:<%= @student.email %>?Subject=Hello%20From%20GA" target="_top"><%= @student.email %></a>
   
     </h4>
 
     <h5>
-      <!-- <strong>Phone number:</strong> -->
       <%= @student.phone_number %>
     </h5>
       <p>
-       <!--  <strong>Address:</strong> -->
         <%= @student.street_address %>
         <%= @student.city %>, <%= @student.state %> <%= @student.country %>
       </p>
       <h3><%= @student.first_name %>'s Applications</h3>
-      <ul>
-        <% @applications.each do |application| %>
-          <li><a href="/courses/<%= application.course_id %>/applications/<%= application.id %>"> <%= application.course.name %></a></li>
-        <% end %>
-      </ul>
+      <div class="center-course">
+          <% @applications.each do |application| %>
+            <p><a href="/courses/<%= application.course_id %>/applications/<%= application.id %>"> <%= application.course.name %></a></p>
+          <% end %>
+      </div>
 
       <%= link_to 'Edit', edit_student_path(@student) %>  |
       <%= link_to 'Back', students_path %>

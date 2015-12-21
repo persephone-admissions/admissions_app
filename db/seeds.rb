@@ -24,7 +24,7 @@ s8 = User.create(first_name: "Hugh", last_name: "Grant", type: "Student", email:
 
 i1 = User.create(first_name: "Kevin", last_name: "Hensing", type: "Instructor", email: "kevhen@ga.com", password: "shiva", phone_number: "(932)305-6952", street_address: "444 Leonard St, PH", city: "Manhattan", state: "NY", country: "USA")
 i2 = User.create(first_name: "Phil", last_name: "Co", type: "Instructor", email: "philco@ga.co", password: "paulsimon", phone_number: "344-503-4096", street_address: "28 Joralemon St, Apt #17", city: "Brooklyn", state: "NY", country: "USA")
-i3 = User.create(first_name: "Chris", last_name: "Johnson", type: "Instructor", email: "johnsonchris98@gmail.com", password: "bruce", "(776) 495-9305", street_address: "2 Water St", city: "Manhattan", state: "NY", country: "USA")
+i3 = User.create(first_name: "Chris", last_name: "Johnson", type: "Instructor", email: "johnsonchris98@gmail.com", password: "bruce", phone_number: "(776) 495-9305", street_address: "2 Water St", city: "Manhattan", state: "NY", country: "USA")
 
 o1 = User.create(first_name: "Michelle", last_name: "Spyridou", type: "Officer", email: "m.spyridou@ga.com", password: "drag0nz", phone_number: "449-637-1950", street_address: "1283 2nd Ave, Apt 16", city: "Manhattan", state: "NY", country: "USA")
 o2 = User.create(first_name: "Elisa", last_name: "Campbell", type: "Officer", email: "ec@ga.com", password: "beluga", phone_number: "256-783-1406", street_address: "667 Vidalia Way", city: "Meriden", state: "CT", country: "USA")
@@ -60,7 +60,7 @@ a8 = Application.create(student_id: s8.id, course_id: c1.id, status_id: st1.id, 
 
 # c1.instructors.push(i1)
 c1.instructors.push(i2)
-c1.instructors.psuh(i3)
+c1.instructors.push(i3)
 
 # c1.officers.push(o1)
 c1.officers.push(o3)
