@@ -27,9 +27,9 @@ Once the application process has begun, a prospective student will receive an em
 ##Project Management:
 We used [Trello](https://trello.com/b/FQhVfIbj) to stay organized. 
 
-##ERDs:
+##ERD:
 ![ERDs](https://raw.githubusercontent.com/persephone-admissions/admissions_app/master/img/ERD.png)
 
-##Wireframes:
-![WireFrames](https://raw.githubusercontent.com/persephone-admissions/admissions_app/master/img/wireframe_1)
+##WireFrames:
+![WireFrames](https://raw.githubusercontent.com/persephone-admissions/admissions_app/master/img/wireframe_1.png)
 
