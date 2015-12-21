@@ -10,7 +10,7 @@
       <% if current_user.type == "Officer" %>
         <% if @application.officer_interview_pending? %>
 
-          <%= form_for @application, url: course_application_path(@application.course, @application), html: {method: "update"} do |f| %>
+          <%= form_for @application, url: course_application_path(@application.course, @application), method: :patch do |f| %>
             <input type="hidden" name="[application]status_id" value="3">
             <%=f.submit "Officer Interview Scheduled" %>
           <% end %>
@@ -22,7 +22,7 @@
       <% elsif current_user.type == "Instructor" %>
         <% if @application.instructor_interview_pending? %>
 
-          <%= form_for @application, url: course_application_path(@application.course, @application), html: {method: "update"} do |f| %>
+          <%= form_for @application, url: course_application_path(@application.course, @application), method: :patch do |f| %>
               <input type="hidden" name="[application]status_id" value="6">
             <%=f.submit "Instructor Interview Scheduled" %>
             
