@@ -18,11 +18,11 @@
 			<% end %>
 		</ul>
 	<h4>Applicants:</h4>
-		<ul>
-			<%= employee.courses.applications.students do |student| %>
-				<li> student.name </li>
-			<% end %>
-		</ul>
+		<% @employee.applications.flatten.each do |application| %>
+			<li><%= link_to application.student.first_name, course_application_path(application.course, application) %></li>
+			
+		<% end %>
+		<%= console %>
 	<%= link_to 'Edit', edit_employee_path(@employee) %> |
 	<%= link_to 'Back', employees_path %>
 </div>
