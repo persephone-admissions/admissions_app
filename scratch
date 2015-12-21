@@ -1,0 +1,12 @@
+  <div class="field">
+    <%= f.select :status_id, [
+      ['Rejected', 1], 
+      ['Application Submitted', 2],
+      ['Phone Interview Scheduled', 3],
+      ['Phone Interview Completed', 4],
+      ['Phone Interview Passed', 5],
+      ['In Person Interview Scheduled', 6],
+      ['In Person Interview Completed', 7],
+      ['Accepted', 8]
+    ]%>
+  </div>
