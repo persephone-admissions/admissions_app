@@ -19,7 +19,15 @@
 		        <% else %> 
 		        <li><a href="/login">Login</a></li>
 		        <% end %>
+		        <% if current_user %>
+		        	<% if current_user.type == "Instructor" || current_user.type == "Officer" %>
+		        			<li><a href="/employees/<%= current_user.id %>">Profile</a></li>
+		        	<% elsif current_user.type == "Student" %>
+		        		<li><a href="/students/<%= current_user.id %>">Profile</a></li>
+		        	<% end %>
+		        <% else %>
 		        <li><a href="/signup">Sign Up</a></li>
+		        <% end %>
 		     </ul>
 		     
 	    </nav>

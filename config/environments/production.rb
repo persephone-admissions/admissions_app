@@ -80,10 +80,10 @@ Rails.application.configure do
   config.paperclip_defaults = { 
     storage: :fog, 
     fog_credentials: { 
-      aws_access_key_id: 'AWS_PERSEPHONE_ADMISSIONS_APP_ACCESS_KEY',
-      aws_secret_access_key: 'AWS_PERSEPHONE_ADMISSIONS_APP_SECRET_ACCESS_KEY',
+      aws_access_key_id: ENV['AWS_PERSEPHONE_ADMISSIONS_APP_ACCESS_KEY'],
+      aws_secret_access_key: ENV['AWS_PERSEPHONE_ADMISSIONS_APP_SECRET_ACCESS_KEY'],
       provider: 'AWS',
-      region: 'US Standard',
+      region: 'us-east-1',
       scheme: 'https'
     },
     fog_directory: "persephoneproject3admissions", 
