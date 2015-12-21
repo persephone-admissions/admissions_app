@@ -1,6 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-
 <div class="user-container2">
 	<h1>
 	  <%= @employee.first_name %> <%= @employee.last_name %>
@@ -12,17 +10,20 @@
 	  <%= @employee.type %>
 	</h4>
 	<h4>Courses:</h4>
-		<ul>
+		<div class="center-course">
 			<% @employee.courses.each do |course| %>
-				<li><a href="/courses/<%= course.id %>"><%= course.name %></a></li>
+				<p><a href="/courses/<%= course.id %>"><%= course.name %></a></p>
 			<% end %>
+
 		</ul>
-	<h4>Applicants:</h4>
+		</div>
+		<h4>Applicants:</h4>
 		<% @employee.applications.flatten.each do |application| %>
 			<li><%= link_to application.student.first_name, course_application_path(application.course, application) %></li>
 			
 		<% end %>
-		<%= console %>
+
+
 	<%= link_to 'Edit', edit_employee_path(@employee) %> |
 	<%= link_to 'Back', employees_path %>
 </div>
