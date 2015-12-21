@@ -10,16 +10,15 @@
       </ul>
     </div>
   <% end %>
-
   <br>
-  <div class="field">
-  <div class="text-upload">
-    <div class="text-upload-center">
-      <%= f.label :text_file %><br>
-      <%= f.file_field :text_file %>
+    <div class="text-upload">
+      <div class="text-upload-center">
+        <%= f.file_field :text_file %>
+      </div>
     </div>
-  </div>
-  <p>For your application materials, we'll gladly accept files ending in .doc, .docx, .pdf, .rtf, and .txt.</p>
+    <div class="p-center">
+      <p>For your application materials, we'll gladly accept files ending in .doc, .docx, .pdf, .rtf, and .txt.</p>
+    </div>
   <br>
   <div class="actions">
     <%= f.submit %>
