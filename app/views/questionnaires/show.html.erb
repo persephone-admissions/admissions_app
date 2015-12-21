@@ -1,11 +1,11 @@
 <div class="countdown-clock">
 	<h3>Interview Timer</h3>
 	<% if current_user.type == "Instructor" %>
-		<div id="countdown"></div><br>
-		<button id="start-button">Start</button>
-	<% elsif current_user.type == "Officer"  %>
 		<div id="countdown2"></div><br>
 		<button id="start-button2">Start</button>
+	<% elsif current_user.type == "Officer"  %>
+		<div id="countdown"></div><br>
+		<button id="start-button">Start</button>
 	<% end %>
 </div>
 

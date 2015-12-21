@@ -9,9 +9,6 @@ class UserMailer < ApplicationMailer
     mail(to: @student.email, subject: 'Welcome to General Assembly')
   end
 
-    # @app = application.applications.first
-    # @url = course_application_url(@app.course, @app)
-
   def welcome_officer(employee, application)
   	@employee = employee
   	@application = application 
@@ -29,8 +26,10 @@ class UserMailer < ApplicationMailer
   	mail(to: @student.email, subject: 'General Assembly Status Update')
   end
 
-  def instructor_email(employee)
+  def instructor_email(employee, application)
   	@employee = employee
+  	@application = application 
+  	@url = course_application_url(@application.course, @application)
   	mail(to: @employee.email, subject: 'You have an interview to set up')
   end
 end
