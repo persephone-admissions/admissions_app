@@ -16,17 +16,17 @@
       <% if @type == "officer" && @application.status_id == 4 %>
         <%= form_for @application, url: course_application_path(@application.course, @application), method: :patch do |f| %>
           <input type="hidden" name="[application]status_id" value="5">
-          <%=f.submit "Officer Interview Passed" %>
+          <%=f.submit "Officer Interview Passed", class: "button" %>
         <% end %>
       <% elsif @type == "instructor" && @application.status_id == 7 %>
         <%= form_for @application, url: course_application_path(@application.course, @application), method: :patch do |f| %>
           <input type="hidden" name="[application]status_id" value="8">
-          <%=f.submit "Instructor Interview Passed" %>
+          <%=f.submit "Instructor Interview Passed", class: "button" %>
         <% end %>
       <% end %>
       <%= form_for @application, url: course_application_path(@application.course, @application), method: :patch do |f| %>
         <input type="hidden" name="[application]status_id" value="1">
-        <%=f.submit "Reject" %>
+        <%=f.submit "Reject", class: "button" %>
       <% end %>    
     </div>
   <% end %>

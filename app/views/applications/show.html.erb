@@ -11,7 +11,7 @@
 
           <%= form_for @application, url: course_application_path(@application.course, @application), method: :patch do |f| %>
             <input type="hidden" name="[application]status_id" value="3">
-            <%=f.submit "Officer Interview Scheduled" %>
+            <%=f.submit "Officer Interview Scheduled", class: "button" %>
           <% end %>
 
         <% elsif @application.officer_interview_scheduled? %>
@@ -23,7 +23,7 @@
 
           <%= form_for @application, url: course_application_path(@application.course, @application), method: :patch do |f| %>
               <input type="hidden" name="[application]status_id" value="6">
-            <%=f.submit "Instructor Interview Scheduled" %>
+            <%=f.submit "Instructor Interview Scheduled", class: "button" %>
             
         <% end %>
 
