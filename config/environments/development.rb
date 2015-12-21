@@ -64,7 +64,7 @@ Rails.application.configure do
     },
     fog_host: "persephoneproject3admissions.s3-website-us-east-1.amazonaws.com",
     fog_directory: "persephoneproject3admissions", 
-    path: "/applications/text_files/:id_partition/:filename"
+    path: "applications/text_files/:id_partition/:filename"
   }
 
 
