@@ -77,7 +77,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-<<<<<<< HEAD
   config.paperclip_defaults = { 
     storage: :fog, 
     fog_credentials: { 
@@ -91,7 +90,6 @@ Rails.application.configure do
     path: "/applications/text_files/:id_partition/:filename"
   }
 
-=======
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true,
@@ -102,8 +100,6 @@ Rails.application.configure do
   :user_name            => ENV['GMAIL_SMTP_USER'],
   :password             => ENV['GMAIL_SMTP_PASSWORD']
   } 
->>>>>>> 0913a13eee112bc1e903bca184d2ee36df37fbaa
-end
 
 # Paperclip::Attachment.default_options[:storage] = :fog
 # Paperclip::Attachment.default_options[:fog_credentials] = { 
