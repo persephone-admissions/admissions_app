@@ -1,6 +1,6 @@
 class StudentsController < UsersController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  before_action :authorize
+  before_action :authorize, except: [:new, :create]
   before_action :authenticate_student, only: [:show, :edit, :update]
 
   # GET /students
