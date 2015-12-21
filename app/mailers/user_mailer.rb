@@ -5,4 +5,8 @@ class UserMailer < ApplicationMailer
     @application = application
     mail(to: @application.email, subject: 'Welcome to General Assembly')
   end
+
+  def status_email(application)
+  	@application = application 
+  	mail(to: @application.email, subject: 'General Assembly Status Update')
 end

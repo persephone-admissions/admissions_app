@@ -39,6 +39,7 @@ class ApplicationsController < ApplicationController
     respond_to do |format|
       if @application.save
         UserMailer.welcome_email(@application.student).deliver
+        UserMailer.wecome_officer(@application.employee).deliver 
         format.html { redirect_to @application, notice: 'Application was successfully created.' }
         format.json { render :show, status: :created, location: @application }
       else
@@ -56,6 +57,7 @@ class ApplicationsController < ApplicationController
 
     respond_to do |format|
       if @application.update(application_params)
+        UserMailer.status_email(@application.student).deliver 
         format.html { redirect_to @course_application_path(@application.course, @application), notice: 'Application was successfully updated.' }
         format.json { render :show, status: :ok, location: @application }
       else
