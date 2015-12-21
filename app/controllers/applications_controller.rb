@@ -65,8 +65,12 @@ class ApplicationsController < ApplicationController
         
         if @application.status_id == 1
           UserMailer.rejection_email(@application.student).deliver
-        elsif @application.status == 8
+        elsif @application.status_id == 8
           UserMailer.acceptance_email(@application.student).deliver
+        elsif @application.status_id == 5
+          @application.course.instructors.each do |instructor|
+            UserMailer.instructor_email(instructor).deliver
+          end
         end
 
             
