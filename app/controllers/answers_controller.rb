@@ -7,6 +7,6 @@ class AnswersController < ApplicationController
       Answer.create(question_id: question_id, content: answer_content, user_id: session[:user_id], application: application)
     end
 
-    redirect_to application
+    redirect_to course_application_path(application.course, application)
   end
 end
