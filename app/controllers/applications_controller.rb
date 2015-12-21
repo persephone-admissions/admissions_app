@@ -40,7 +40,11 @@ class ApplicationsController < ApplicationController
     respond_to do |format|
       if @application.save
         UserMailer.welcome_email(@application.student).deliver
-        UserMailer.wecome_officer(@application.course.employee).deliver 
+        
+        @application.course.officers.each do |instructor|
+          UserMailer.welcome_officer(instructor).deliver
+        end 
+        
         format.html { redirect_to course_application_path(@application.course, @application), notice: 'Application was successfully created.' }
         format.json { render :show, status: :created, location: @application }
       else
@@ -59,9 +63,9 @@ class ApplicationsController < ApplicationController
     respond_to do |format|
       if @application.update(application_params)
         
-        if @application.status_id == 9
+        if @application.status_id == 1
           UserMailer.rejection_email(@application.student).deliver
-        elsif @application.status == 16
+        elsif @application.status == 8
           UserMailer.acceptance_email(@application.student).deliver
         end
 
