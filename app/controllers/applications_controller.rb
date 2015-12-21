@@ -57,8 +57,10 @@ class ApplicationsController < ApplicationController
 
     respond_to do |format|
       if @application.update(application_params)
+
         UserMailer.status_email(@application.student).deliver 
         format.html { redirect_to @course_application_path(@application.course, @application), notice: 'Application was successfully updated.' }
+
         format.json { render :show, status: :ok, location: @application }
       else
         format.html { render :edit }
@@ -80,7 +82,8 @@ class ApplicationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_application
-      @application = Application.find(params[:id])
+      @application = Application.find(params[:application_id])
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

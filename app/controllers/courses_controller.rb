@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  # before_action :authorize, except: [:show, :index]
 
   # GET /courses
   # GET /courses.json
@@ -14,16 +15,21 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
     @current_user = User.find(session[:user_id]) if session[:user_id]
-    # @application = Application.find(params[:id])  
+    # @application = Application.find(params[:id])
+    @instructors = Instructor.where(course: params[:id])
   end
 
   # GET /courses/new
   def new
     @course = Course.new
+    @instructors = Instructor.all
+    @officers = Officer.all
   end
 
   # GET /courses/1/edit
   def edit
+    @instructors = Instructor.all
+    @officers = Officer.all
   end
 
   # POST /courses
@@ -45,6 +51,9 @@ class CoursesController < ApplicationController
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
   def update
+    @instructors = Instructor.all 
+    @officers = Officer.all
+
     respond_to do |format|
       if @course.update(course_params)
         format.html { redirect_to @course, notice: 'Course was successfully updated.' }
