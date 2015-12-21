@@ -110,3 +110,10 @@
 	cursor: pointer;
 }
 
+.center-course{
+
+	width:100%;
+}
+.center-course a {
+	text-align: center;
+}

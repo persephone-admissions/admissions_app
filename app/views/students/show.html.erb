@@ -23,11 +23,11 @@
         <%= @student.city %>, <%= @student.state %> <%= @student.country %>
       </p>
       <h3><%= @student.first_name %>'s Applications</h3>
-      <ul>
-        <% @applications.each do |application| %>
-          <li><a href="/courses/<%= application.course_id %>/applications/<%= application.id %>"> <%= application.course.name %></a></li>
-        <% end %>
-      </ul>
+      <div class="center-course">
+          <% @applications.each do |application| %>
+            <p><a href="/courses/<%= application.course_id %>/applications/<%= application.id %>"> <%= application.course.name %></a></p>
+          <% end %>
+      </div>
 
       <%= link_to 'Edit', edit_student_path(@student) %>  |
       <%= link_to 'Back', students_path %>
