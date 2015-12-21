@@ -101,7 +101,6 @@ Rails.application.configure do
   :password             => ENV['GMAIL_SMTP_PASSWORD']
   }
    
-end
 # Paperclip::Attachment.default_options[:storage] = :fog
 # Paperclip::Attachment.default_options[:fog_credentials] = { 
 #   aws_access_key_id: 'AWS_PERSEPHONE_ADMISSIONS_APP_ACCESS_KEY',

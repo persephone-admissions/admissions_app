@@ -1,5 +1,7 @@
 class StudentsController < UsersController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :authorize
+  before_action :authenticate_student, only: [:show, :edit, :update]
 
   # GET /students
   # GET /students.json
@@ -20,6 +22,7 @@ class StudentsController < UsersController
 
   # GET /students/1/edit
   def edit
+
   end
 
   # POST /students
@@ -72,5 +75,9 @@ class StudentsController < UsersController
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
       params.require(:student).permit(:first_name, :last_name, :email, :phone_number, :street_address, :city, :state, :country, :password)
+    end
+
+    def authenticate_student
+      redirect_to '/' if session[:user_id] != params[:id].to_i && current_user.type == "Student"
     end
 end

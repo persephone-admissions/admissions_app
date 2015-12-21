@@ -35,7 +35,11 @@ class ApplicationController < ActionController::Base
 
   # Allows us to check for a logged in user
   def authorize
-    redirect_to '/login' unless @current_user
+    redirect_to '/login' unless current_user
   end
-  
+
+  def authenticate_employee
+    redirect_to '/' unless current_user.type == "Instructor" || current_user.type == "Officer"
+  end
+
 end
