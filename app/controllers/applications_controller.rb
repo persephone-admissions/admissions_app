@@ -20,6 +20,7 @@ class ApplicationsController < ApplicationController
     @application = Application.new
     @student_id = session[:user_id]
     @course_id = params[:course_id]
+    @course = Course.find(@course_id)
     # I believe this is redundant because we have a hidden input in the new_form that sets status_id = 2
     # but am keeping it here for now just in case
     # @application.status_id = 2
@@ -40,7 +41,7 @@ class ApplicationsController < ApplicationController
       if @application.save
         UserMailer.welcome_email(@application.student).deliver
         UserMailer.wecome_officer(@application.course.employee).deliver 
-        format.html { redirect_to @application, notice: 'Application was successfully created.' }
+        format.html { redirect_to course_application_path(@application.course, @application), notice: 'Application was successfully created.' }
         format.json { render :show, status: :created, location: @application }
       else
         format.html { render :new }
@@ -88,7 +89,7 @@ class ApplicationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_application
-      @application = Application.find(params[:application_id])
+      @application = Application.find(params[:id])
 
     end
 

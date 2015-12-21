@@ -5,8 +5,8 @@
   
 	<div class="app-links">
 		<div class="links">
-			<%= link_to 'Show', @application %> |
-			<%= link_to 'Back', applications_path %>
+			<%= link_to 'Show', course_application_path(@application.course, @application) %> |
+			<%= link_to 'Back', course_applications_path(@application.course) %>
 		</div>
 	</div>
 </div>

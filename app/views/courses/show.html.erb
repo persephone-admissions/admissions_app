@@ -17,18 +17,18 @@
       </li>
       <li>Instructors: 
         <ul>
-          <%= @course.instructors.each do |instructor| %>
+          <% @course.instructors.each do |instructor| %>
             <% if instructor %>
-              <li><%= instructor.full_name %></li>
+              <li><a href="/employees/<%= instructor.id %>"><%= instructor.full_name %></a></li>
             <% end %>
           <% end %>
         </ul>
       </li>
       <li>Officers:
         <ul>
-          <%= @course.officers.each do |officer| %>
+          <% @course.officers.each do |officer| %>
             <% if officer %>
-              <li><%= officer.full_name %></li>
+              <li><a href="/employees/<%= officer.id %>"><%= officer.full_name %></a></li>
             <% end %>
           <% end %>
         </ul>

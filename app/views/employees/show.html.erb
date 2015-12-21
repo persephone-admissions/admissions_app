@@ -13,7 +13,7 @@
 	</h4>
 	<h4>Courses:</h4>
 		<ul>
-			<%= @employee.courses.each do |course| %>
+			<% @employee.courses.each do |course| %>
 				<li><a href="/courses/<%= course.id %>"><%= course.name %></a></li>
 			<% end %>
 		</ul>
