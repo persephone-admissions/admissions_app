@@ -13,7 +13,7 @@
 
   <% if current_user.type == "Instructor" || current_user.type == "Officer" %>
     <div class="text-contain">
-      <div class="question-text-app-contain">
+      <div class="question-text-app-container">
         <%= f.label :notes %><br>
         <%= f.text_area :notes, class: 'question-text-app' %>
       </div>
@@ -32,7 +32,7 @@
     <br>
   <% end %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Update Application', class: "button" %>
   </div>
 
 <% end %>

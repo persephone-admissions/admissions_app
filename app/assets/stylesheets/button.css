@@ -1,0 +1,22 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
+
+.button {
+	text-align: center;
+	font-size: 15px;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	height:40px;
+	width:200px;
+	background-color: #F5483D;
+	margin: 1em auto;
+	position: relative;
+	border-radius: 3px;
+	cursor: pointer;
+	border-color: #F5483D;
+	border-style: none;
+}
+
+.button:hover {
+	background-color: #F1250C;
+}
