@@ -76,24 +76,38 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.paperclip_defaults = { 
+    storage: :fog, 
+    fog_credentials: { 
+      aws_access_key_id: 'AWS_PERSEPHONE_ADMISSIONS_APP_ACCESS_KEY',
+      aws_secret_access_key: 'AWS_PERSEPHONE_ADMISSIONS_APP_SECRET_ACCESS_KEY',
+      provider: 'AWS',
+      region: 'US Standard',
+      scheme: 'https'
+    },
+    fog_directory: "persephoneproject3admissions", 
+    path: "/applications/text_files/:id_partition/:filename"
+  }
+
 end
 
-Paperclip::Attachment.default_options[:storage] = :fog
-Paperclip::Attachment.default_options[:fog_credentials] = { 
-  aws_access_key_id: 'AWS_PERSEPHONE_ADMISSIONS_APP_ACCESS_KEY',
-  aws_secret_access_key: 'AWS_PERSEPHONE_ADMISSIONS_APP_SECRET_ACCESS_KEY',
-  provider: 'AWS',
-  region: 'US Standard',
-  scheme: 'https'
-}
+# Paperclip::Attachment.default_options[:storage] = :fog
+# Paperclip::Attachment.default_options[:fog_credentials] = { 
+#   aws_access_key_id: 'AWS_PERSEPHONE_ADMISSIONS_APP_ACCESS_KEY',
+#   aws_secret_access_key: 'AWS_PERSEPHONE_ADMISSIONS_APP_SECRET_ACCESS_KEY',
+#   provider: 'AWS',
+#   region: 'US Standard',
+#   scheme: 'https'
+# }
 # This is the name of the S3 bucket that will store your files.
 # Remember that the bucket must be unique across all of Amazon S3.
 # If the bucket does not exist, Paperclip will attempt to create it.
-Paperclip::Attachment.default_options[:fog_directory] = "persephoneproject3admissions"
+# Paperclip::Attachment.default_options[:fog_directory] = "persephoneproject3admissions"
 # This is the key under the bucket in which the file will be stored. 
 # The URL will be constructed from the bucket and the path. This is what you will want to interpolate.
 # Keys should be unique, like filenames, 
 # and despite the fact that S3 (strictly speaking) does not support directories,
 # you can still use a / to separate parts of your file name.
-Paperclip::Attachment.default_options[:path] = "/applications/text_files/:id_partition/:filename"
+# Paperclip::Attachment.default_options[:path] = "/applications/text_files/:id_partition/:filename"
 

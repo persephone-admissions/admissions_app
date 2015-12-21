@@ -42,6 +42,8 @@ gem 'mail'
 #Use for Amazon Web Services storage
 gem 'aws-sdk', '~> 1.6' # If using paperclip <= v4.3.1
 
+gem 'fog'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

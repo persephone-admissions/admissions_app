@@ -42,7 +42,6 @@
   <%= select("course", "officers", Officer.all.collect {|p| [ p.full_name, p.id ] }, {include_blank: 'None', multiple: true}) %>
   </div>
 
-
   <div class="actions">
     <%= f.submit %>
   </div>
