@@ -71,7 +71,7 @@ class ApplicationsController < ApplicationController
           UserMailer.acceptance_email(@application.student).deliver
         elsif @application.status_id == 5
           @application.course.instructors.each do |instructor|
-            UserMailer.instructor_email(instructor, @application).deliver
+            UserMailer.instructor_email(instructor).deliver
           end
         end
 
