@@ -1,6 +1,8 @@
 class ApplicationsController < ApplicationController
   before_action :set_application, only: [:show, :edit, :update, :destroy]
-  # before_action :authorize
+  before_action :authorize
+  before_action :authenticate_employee, only: [:index]
+  before_action :authenticate_student_app, only: [:show, :edit, :update]
 
   # GET /applications
   # GET /applications.json
@@ -100,11 +102,14 @@ class ApplicationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_application
       @application = Application.find(params[:id])
-
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def application_params
       params.require(:application).permit(:notes, :student_id, :course_id, :status_id, :text_file)
+    end
+
+    def authenticate_student_app
+      redirect_to '/' if @application.student_id != session[:user_id] && current_user.type == "Student"
     end
 end
