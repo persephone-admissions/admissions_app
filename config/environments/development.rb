@@ -53,10 +53,24 @@ Rails.application.configure do
     :password => ENV['GMAIL_PASSWORD_DEV']
     }
 
+  config.paperclip_defaults = { 
+    storage: :fog, 
+    fog_credentials: { 
+      aws_access_key_id: ENV['AWS_PERSEPHONE_ADMISSIONS_APP_ACCESS_KEY'],
+      aws_secret_access_key: ENV['AWS_PERSEPHONE_ADMISSIONS_APP_SECRET_ACCESS_KEY'],
+      provider: 'AWS',
+      region: 'us-east-1',
+      scheme: 'https'
+    },
+    fog_host: "persephoneproject3admissions.s3-website-us-east-1.amazonaws.com",
+    fog_directory: "persephoneproject3admissions", 
+    path: "/applications/text_files/:id_partition/:filename"
+  }
+
+
 end
 
 Paperclip.options[:command_path] = "/usr/local/bin/"
-
 
 # not sure WHY the settings below aren't working, as they're supposed to the default settings, 
 # but the files don't link properly when it's enabled 
