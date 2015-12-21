@@ -30,7 +30,7 @@ class QuestionnairesController < ApplicationController
   def review
     @application = Application.find(params[:application_id])
     @type = params[:type]
-    if @type = "instructor"
+    if @type == "instructor"
       @answers = @application.instructor_answers
     else
       @answers = @application.officer_answers
