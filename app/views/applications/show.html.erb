@@ -23,9 +23,10 @@
         <% if @application.instructor_interview_pending? %>
 
           <%= form_for @application, url: course_application_path(@application.course, @application), html: {method: "update"} do |f| %>
-            <input type="hidden" name="[application]status_id" value="6">
+              <input type="hidden" name="[application]status_id" value="6">
             <%=f.submit "Instructor Interview Scheduled" %>
-          <% end %>
+            
+        <% end %>
 
         <% elsif @application.instructor_interview_scheduled? %>
           <%= link_to "Conduct Instructor Interview", course_application_questionnaire_path(@application.course, @application, @application.instructor_questionnaire) %>
