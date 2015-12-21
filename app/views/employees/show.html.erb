@@ -11,8 +11,12 @@
 	<h4>
 	  <%= @employee.type %>
 	</h4>
-
-	
+	<h4>Courses:</h4>
+		<ul>
+			<%= @employee.courses.each do |course| %>
+				<li><a href="/courses/<%= course.id %>"><%= course.name %></a></li>
+			<% end %>
+		</ul>
 
 	<%= link_to 'Edit', edit_employee_path(@employee) %> |
 	<%= link_to 'Back', employees_path %>

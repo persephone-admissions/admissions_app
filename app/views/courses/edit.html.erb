@@ -4,9 +4,16 @@
 	<h1>Course Edit</h1>
 
 	<%= render 'form' %>
+
+  <div class="actions">
+    <%= form_for @course, url: course_path(@course), html: {method: "delete"} do |f| %>
+      <%=f.submit "Delete Course" %>
+    <% end %>
+  </div>
 	<div class="edit-course-links">
   
 		<%= link_to 'Show', @course %> |
 		<%= link_to 'Back', courses_path %>
-	</div>
+  </div>
+
 </div>
