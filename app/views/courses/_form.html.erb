@@ -31,12 +31,21 @@
     <%= f.label :description %><br>
     <%= f.text_area :description, size: "50x5", class: 'text-area' %>
   </div>
+  <div class="field">
+    <%= f.label :instructors %><br>
+    <%= f.select :instructors, options_for_select(@instructors.collect { |u| [u.full_name, u.id] }), html: { :multiple => true,:include_blank => true } %>
+    <%= f.select :instructors, options_for_select(@instructors.collect { |u| [u.full_name, u.id] }), html: { :multiple => true, :include_blank => true } %>
+    <%= f.select :instructors, options_for_select(@instructors.collect { |u| [u.full_name, u.id] }), html: { :multiple => true, :include_blank => true } %>
+  </div>
+
+  <div class="field">
+    <%= f.label :officers %><br>
+    <%= f.select :officers, options_for_select(@officers.collect { |u| [u.full_name, u.id] }), html: { :multiple => true, :include_blank => true } %>
+    <%= f.select :officers, options_for_select(@officers.collect { |u| [u.full_name, u.id] }), html: { :multiple => true, :include_blank => true } %>
+    <%= f.select :officers, options_for_select(@officers.collect { |u| [u.full_name, u.id] }), html: { :multiple => true, :include_blank => true } %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
-  <div class="actions">
-    <%= form_for @course, url: course_path(@course), html: {method: "delete"} do |f| %>
-      <%=f.submit "Delete Course" %>
-    <% end %>
-  </div>
 <% end %>
+
