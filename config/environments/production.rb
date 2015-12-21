@@ -13,7 +13,7 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-
+  config.action_view.cache_template_loading = true
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like
@@ -76,6 +76,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+  :enable_starttls_auto => true,
+  :address              => "smtp.gmail.com",
+  :port                 => 587,
+  :authentication       => :plain,
+  :domain               => ENV['GMAIL_SMTP_USER'],
+  :user_name            => ENV['GMAIL_SMTP_USER'],
+  :password             => ENV['GMAIL_SMTP_PASSWORD']
+  } 
 end
 
 Paperclip::Attachment.default_options[:storage] = :fog
