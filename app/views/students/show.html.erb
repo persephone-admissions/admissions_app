@@ -1,24 +1,18 @@
-<p id="notice"><%= notice %></p>
-
+<!-- <p id="notice"><%= notice %></p> -->
   <div class="user-container2">
-
     <h3>
-      <!-- <strong>Student Name:</strong> -->
       <%= @student.first_name %> <%= @student.last_name %>
     </h3>
 
     <h4>
-      <!-- <strong>Email:</strong> -->
       <a href="mailto:<%= @student.email %>?Subject=Hello%20From%20GA" target="_top"><%= @student.email %></a>
   
     </h4>
 
     <h5>
-      <!-- <strong>Phone number:</strong> -->
       <%= @student.phone_number %>
     </h5>
       <p>
-       <!--  <strong>Address:</strong> -->
         <%= @student.street_address %>
         <%= @student.city %>, <%= @student.state %> <%= @student.country %>
       </p>
