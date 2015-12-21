@@ -24,10 +24,9 @@ class UserMailer < ApplicationMailer
   	mail(to: @student.email, subject: 'General Assembly Status Update')
   end
 
-  def instructor_email(employee, application)
+  def instructor_email(employee)
   	@employee = employee
-  	@application = application 
-  	@url = course_application_url(@application.course, @application)
+
   	mail(to: @employee.email, subject: 'You have an interview to set up')
   end
 end
