@@ -4,10 +4,10 @@
     <h1><%= @course.name %></h1>
     <ul>  
       <li>Starts: 
-        <%= @course.start_on %>
+        <%= @course.start_on.strftime("%m/%d/%Y") if @course.start_on %>
       </li>
       <li>Ends:
-        <%= @course.end_on %>
+        <%= @course.end_on.strftime("%m/%d/%Y") if @course.end_on %>
       </li>
       <li>Description: 
         <p> <%= @course.description %> </p>

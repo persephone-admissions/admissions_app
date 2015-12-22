@@ -5,7 +5,7 @@
     <div class="courses-list">
       <ul>
        <% @courses.each do |course| %>
-            <li> <%= link_to course.name, course_path(course) %> Starts: 10/25 <%= course.start_on %> Ends: 12/31 <%= course.end_on %></li>
+            <li> <%= link_to course.name, course_path(course) %> Starts: <%= course.start_on.strftime("%m/%d/%Y") if course.start_on %> Ends: <%= course.end_on.strftime("%m/%d/%Y") if course.end_on %></li>
        <% end %>
       </ul>
     </div>
